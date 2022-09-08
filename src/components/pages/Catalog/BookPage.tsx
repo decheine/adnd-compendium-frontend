@@ -26,65 +26,6 @@ interface BookLoaderProps {
 
 // Need to call API to get settings
 
-const getBookData = async (publish_id: any) => {
-    const apiurl = "http://127.0.0.1:8080" + "/api/catalog/" + publish_id;
-  
-    return fetch(apiurl, {
-      method: 'GET',
-      headers: {
-      }
-    });  
-}
-
-
-// The Page component will take as input the book id that is
-// in the url location. It will get the data from DB for that publish_id
-
-// class BookPageLoader extends React.Component {
-//     state = {
-//         publish_id: "",
-//         loading: true,
-//         monster_keys: [],
-//         error: false
-//       }
-
-//     constructor(props: BookLoaderProps) {
-//         super(props);
-//         this.state.publish_id=props.publish_id;
-        
-//     }
-//     // componentDidMount() {
-//     //     fetch("http://127.0.0.1:8080" + "/api/catalog/" + this.state.publish_id)
-//     //                     .then((res) => res.json())
-//     //                     .then((json) => {
-//     //                         this.setState({
-//     //                             items: json,
-//     //                             DataisLoaded: true
-//     //                         });
-//     //                     })
-//     // }
-//     // useEffect(() => {
-//     //     fetch(`https://jsonplaceholder.typicode.com/posts`)
-//     //      .then((response) => response.json())
-//     //      .then((actualData) => console.log(actualData))
-//     //      .catch((err) => {
-//     //       console.log(err.message);
-//     //      });
-//     //    }, []);
-
-//     render() {
-//         return (
-//             <>
-//                 <BookPage/>
-//                 <div className='background-catalog'>
-//                     Book Title: {this.state.publish_id}
-//                 </div>
-//             </>
-//         )
-//     }
-// }
-
-
 const BookPageLoader = () => {
     const {category, publish_id} = useParams();
     const [bookData, setBookData] = useState([])
@@ -110,7 +51,11 @@ const BookPageLoader = () => {
     }, [])
   
     return (
+        <>
+        <div className="background"></div>
         <Layout>
+            {/* Background Image Paper */}
+            
             {/* Image */}
             <div className="frame">
                 <div className="card-1">
@@ -167,6 +112,7 @@ const BookPageLoader = () => {
                 </div>
             </div>
         </Layout>
+        </>
     )
   }
 
