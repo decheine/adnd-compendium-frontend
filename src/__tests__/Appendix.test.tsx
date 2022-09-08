@@ -6,10 +6,9 @@ import ReactTestUtils from 'react-dom/test-utils';
 import {configure} from '@testing-library/dom'
 // import serialize from 'my-custom-dom-serializer'
 
-import App from './App';
-import Counter from './Counter';
+import App from '../App';
 // import MockMonsterPage from './components/MockMonsterPage';
-import MockSlimMonsterPage from './components/MockMonsterPage';
+import MockSlimMonsterPage from '../components/MockMonsterPage';
 
 
 // Load ALL monster data

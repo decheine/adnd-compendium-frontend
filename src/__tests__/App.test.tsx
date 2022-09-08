@@ -9,15 +9,14 @@ import userEvent from '@testing-library/user-event';
 import ReactDOM from 'react-dom';
 
 // APP
-import App from './App';
+import App from '../App';
 
 // Components to test
-import MonsterLink from './components/MonsterLink';
-import {MonsterPageLoader, MockMonsterPageLoader} from './components/MonsterPage';
-import Counter from './Counter';
+import MonsterLink from '../components/MonsterLink';
+import {MonsterPageLoader, MockMonsterPageLoader} from '../components/MonsterPage';
 
 // Data
-import KEYS_TITLES from './data/AA_KEYS_TITLES.json'
+import KEYS_TITLES from '../data/AA_KEYS_TITLES.json'
 import { wait } from '@testing-library/user-event/dist/types/utils/misc/wait';
 // import { wait } from '@testing-library/user-event/dist/types/utils';
 

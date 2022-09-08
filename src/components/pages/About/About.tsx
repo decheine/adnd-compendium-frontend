@@ -1,41 +1,41 @@
+import React from 'react';
+
 import Layout from "../../Layout";
 import { Interweave } from 'interweave';
-
-// import fs from "fs";
-// var fs = require('fs');
-
-// const vampireRawHTML: String = require('./rawhtml.html');
-const fileName: string = 'rawhtml.html';
-// let fileContent = fs.readFileSync(fileName, 'utf8');
-
-
-
+import { AppService } from '../../../services/app.service';
 
 export function About() {
     return (
         // upper page with category links
         <>
-        <Layout>
-            
-        <div className='background-catalog'>
-            Some text for the About page. 
-        </div>
+            <Layout>
+                
+                <div className='background-catalog'>
+                    Some text for the About page. 
+                </div>
 
-        <div className="testing-header">
-            <h1>About</h1>
-        This page currently used for testing.
-        
+                <div className="testing-header">
+                    <h1>About</h1>
+                This page currently used for testing.
+                
 
-        </div>
-        
-        <div>
-            Testing Interweave
+                </div>
+                
+                <div>
+                    Testing Interweave
 
-            <Interweave content="This string contains <b>HTML</b> and will safely be rendered!" />;
+                    <Interweave content="This string contains <b>HTML</b> and will safely be rendered!" />;
+                </div>
+                <hr/>
+                <h2>Function Testing</h2>
 
-        </div>
-        
-        </Layout>
+                <div>
+                    <button onClick={() => AppService.getMonster("aarakath")}>
+                      Get Monster  
+                    </button>
+                </div>
+
+            </Layout>
         </>
 
         // lower page with all book list

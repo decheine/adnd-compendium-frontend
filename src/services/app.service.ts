@@ -1,10 +1,14 @@
 import axios from 'axios';
 
+const API: string = "http://localhost:8080";
+// const API: string = "http://3.18.51.8:8080";
+
+
 export class AppService {
 
 
-    public async getMonster(monster_key: any): Promise<any> {
-        const response = await axios.get("/api/appendix/" + monster_key);
+    public static async getMonster(monster_key: string): Promise<any> {
+        const response = await axios.get(API + "/api/appendix/" + monster_key);
         return response.data;
     }
 
@@ -13,7 +17,7 @@ export class AppService {
     //     return response.data;
     // }
 
-    public async addUser(user: any) {
+    public static async addUser(user: any) {
         const response = await axios.post(`/api/user`, {user});
         return response.data;
     }

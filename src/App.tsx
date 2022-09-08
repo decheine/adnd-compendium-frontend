@@ -23,33 +23,11 @@ import './App.css';
 import BreadCrumb from "./components/BreadCrumb/BreadCrumbFrame";
 import Appendix from "./components/pages/Appendix/AppendixPage";
 
-import Counter from "./Counter";
 
-// Routes
-// Refactor to an import later
-
-
-// const routes = [
-//   '/',
-//   '/Index',
-//   '/Catalog',
-//   '/Catalog/:category',
-//   '/About'
-// ]
-
-// const routes = [
-//       {path: "/z", element: <Home />},
-//       {path: "/Index"},
-//       {path: "/Catalog", element: <Catalog/>},
-//       {path: "/Catalog/:category", element: <SettingPage/>},
-//       {path: "/About"}
-// ];
 
 const routes = [
   {path: "/Catalog/:category", element: <SettingPage/>}
 ];
-
-
 
 
 const useCurrentPath = () => {
@@ -60,42 +38,12 @@ const useCurrentPath = () => {
 }
 
 function App() {
-  // const [monster, setMonster] = useState<any>();
-  // const [users, setUsers] = useState<any>([]);
-  // const [numberOfUsers, setNumberOfUsers] = useState<number>(0);
-
   const appService = new AppService();
 
   // Dark Mode eventually
   // const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-// const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  // const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
-  // const dataService = new DataService();
-
-  // global.monster_titles = new Map<string, string>();
-
-  // if(!global.monster_titles){
-  //   dataService.getMonsterTitles().then((data): any => {
-  //     // for loop iterating over item in data
-  //     console.log(data);
-  //     for (let key in data) {
-  //       // console.log(data[key]);
-  //       globalThis.monster_titles.set(key, data[key]);
-  //     }
-
-  //     console.log(data);
-  //   });
-  // }
-
-  
-
-  // dataService.getMonster("aarakath").then(data => {
-  //   console.log("get monster: " + data);
-  // });
-
-  // get text from text box and set monster_key to it?
-
-  
 
   return (
     <>
@@ -124,10 +72,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-    <BookMonsterListLoader publish_id="2102" />
-    <BookMonsterListLoader publish_id="2103" />
-    <MonsterPageLoader monster_key="aarakath"/>
-*/
