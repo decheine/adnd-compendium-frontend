@@ -1,0 +1,90 @@
+
+.frame {
+    margin: auto;
+    margin-top: 10px;
+    max-width: 900px;
+}
+
+@media only screen and (max-width: 1100px){
+    .frame{
+        max-width: 82vw;
+    }
+    .list-container{
+        max-width: 82vw;
+    }
+}
+
+.card-1 {
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-img{
+    display: block;
+    min-width: 150px;
+    max-width: 231px;
+}
+
+@media only screen and (max-width: 400px){
+    .card-1 {
+        flex-direction: column;
+    }
+    .card-img {
+        width: 100%;
+    }
+}
+
+.col-1{
+    border: 1px dashed grey;
+    align-self: auto;
+    flex-grow: 0;
+}
+
+.col-2 {
+    padding: 8px;
+    border: 1px dashed red;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1
+}
+
+.card-body{
+    border: 1px dashed grey;
+}
+
+h5.card-title{
+    font-size: larger;
+    border: 1px dashed grey;
+    margin: 0px;
+}
+
+/* List Area */
+.list-container {
+    margin: auto;
+    margin-top: 10px;
+    max-width: 900px;
+}
+
+.list-flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-entry {
+    flex-grow: 1;
+    width: 25%;
+    font-size : large;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.list-link{
+    text-decoration: none;
+}

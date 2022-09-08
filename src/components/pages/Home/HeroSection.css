@@ -1,0 +1,142 @@
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+  
+  .hero_tsr {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .hero-container {
+    /* background: radial-gradient(
+      50% 50% at 50% 50%,
+      #ffffff 64.76%,
+      rgba(245, 238, 219, 1) 100%
+    ); */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    object-fit: contain;
+  
+    /* Rectangle 7 */
+  
+    /* Weathered Paper */
+  
+    /* transform: rotate(90deg); */
+  }
+  
+  .hero-container > h1 {
+    /* Monstrous Compendium */
+  
+    /* Monstrous Title 2 */
+    font-family: FrizQuadrata;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3vw;
+    /* line-height: 30px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* text-shadow: 1px 1px 3px black; */
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    /* Main Darker */
+    color: #2b4285;
+  }
+  
+  .hero-container > h2 {
+    /* Complete* */
+  
+    /* Monstrous Title 3 */
+    font-family: Friz Quadrata;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4vw;
+    line-height: 102px;
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.06em;
+    /* text-shadow: 1px 1px 3px black; */
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+  
+    /* Mystara - Primary */
+    color: #ff3333;
+  }
+  
+  .hero-container > h3 {
+    /* Appendix */
+  
+    /* Monstrous Subtitle */
+    font-family: Friz Quadrata;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    /* line-height: 55px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.05em;
+    /* text-shadow: 1px 1px 3px black; */
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+    /* Mystara - Primary */
+    color: #ff3333;
+  }
+  
+  .hero-container > p {
+    margin-top: 8px;
+    /* color: #fff; */
+    font-size: 32px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .hero-btns {
+    margin-top: 32px;
+  }
+  
+  .hero-btns .btn {
+    margin: 6px;
+  }
+  
+  .fa-play-circle {
+    margin-left: 4px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .hero-container > h1 {
+      font-size: 32pt;
+      margin-top: 0px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-container > h1 {
+      font-size: 24pt;
+      margin-top: 0px;
+    }
+  
+    .hero-container > p {
+      font-size: 24px;
+    }
+  
+    .btn-mobile {
+      display: block;
+      text-decoration: none;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,98 @@
+:root {
+    --color-main-darker: #2b4285;
+  }
+  
+  .add {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+  }
+  
+  /* Blue and black horizontal lines */
+  .hr1 {
+    color: black;
+    background-color: black;
+    height: 3px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    clear: both;
+  }
+  .hr2 {
+    color: #4169e1;
+    background-color: var(--color-main-darker);
+    border: none;
+    height: 8px;
+    margin-top: 0px;
+  }
+  
+  .summary {
+    padding: 2rem;
+  }
+  
+  .summary_banner_container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  
+  .summary_banner {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+  
+  .summary_img_container {
+    flex: 1;
+    align-self: center;
+  }
+  
+  .summary_img {
+    /* align-self: center; */
+    display: block;
+    margin: auto;
+    width: 200px;
+  }
+  
+  .summary_text {
+    flex: 2;
+    /* Description */
+    /* padding-left: 2em;
+    padding-right: 2em; */
+    height: auto;
+  }
+  
+  .summary_par {
+    font-family: "Palatino Linotype";
+  
+    font-family: Palatino Linotype;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    /* font-size: calc(0.66vw + 0.66vh); */
+    text-align: justify;
+    text-indent: 40px;
+  }
+  
+  @font-face {
+    font-family: "frizquadrata_ltbold";
+    src: url("https://decheine.github.io/lomion-de/site/fonts/friz_quadrata_lt_bold-webfont.woff2")
+        format("woff2"),
+      url("https://decheine.github.io/lomion-de/site/fonts/friz_quadrata_lt_bold-webfont.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Mobile view  */
+  
+  @media screen and (max-width: 960px) {
+    .summary_img_container {
+      display: none;
+    }
+  }
+  

@@ -1,0 +1,23 @@
+.wrapper {
+    width: 70%;
+    margin: auto;
+  }
+
+.BookMonsterList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.BookMonsterList>*{
+    flex: 1 1 30%;
+    margin: 10px;
+}
+.box {
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box>* {
+    flex: 1 0 30%;
+    margin: 10px;
+  }
