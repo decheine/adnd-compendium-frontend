@@ -7,6 +7,8 @@ import { Link, useParams } from 'react-router-dom';
 import Layout from './Layout';
 import MonsterBodyBlocks from './MonsterBlockBuilder';
 
+// import DataService
+import { DataService } from '../services/DataService'
 
 
 const KEYS_TITLES = require('../data/AA_KEYS_TITLES.json')
@@ -90,21 +92,9 @@ interface IMonsterPage {
                 />
                 </div>
                 
-                {/* BODY */}
-                
                 {/* Render with Interweave */}
                 <Interweave className= "interweave" content={data[0].monster_data.fullBody} />
                 
-                
-                {/* PSIONICS */}
-                
-                {/* <hr className="hr3"/> */}
-    
-                {/* Testing Body Blocks */}
-                {/* <div className="body-blocks-wrapper">
-                    <MonsterBodyBlocks bodyBlocks={data[0].monster_data.bodyBlocks}/>
-                </div> */}
-    
                 {/* TSR Array */}
                 <div className="source-list">
                     <div className="tsr-label">
@@ -127,7 +117,6 @@ interface IMonsterPage {
                     </div>
                 </div>
     
-    
                 {/* LAST MODIFIED */}
                 <div className="last-modified">
                     Last Modified: {data[0].updatedAt}
@@ -147,9 +136,6 @@ interface IMonsterPage {
                         </div>
                     </div>
                 </div>
-    
-                
-    
             </div>
         )
     }
@@ -171,11 +157,13 @@ const MonsterPageLoader = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    // debugger;
     useEffect(() => {
-        getMonsterData(monster_key)
-        .then(response => response.json())
-        .then(json => {
-            setData(json);
+
+        // getMonsterData(monster_key)
+        DataService.getMonster(monster_key)
+        .then(response => {
+            setData(response);
             setLoading(false);
         }).catch(error => {
             setError(error);

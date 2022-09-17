@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API: string = "http://localhost:8080";
+// import GLOBALS
+import { GLOBALS } from '../data/GLOBALS';
+
+const API: string = "http://127.0.0.1:8080";
 // const API: string = "http://3.18.51.8:8080";
 
 
@@ -8,7 +11,7 @@ export class AppService {
 
 
     public static async getMonster(monster_key: string): Promise<any> {
-        const response = await axios.get(API + "/api/appendix/" + monster_key);
+        const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/appendix/" + monster_key);
         return response.data;
     }
 

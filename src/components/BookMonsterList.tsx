@@ -3,6 +3,11 @@ import axios from 'axios'
 
 import MonsterLink from './MonsterLink'
 
+// import GLOBALS
+// import {KEYS_TITLES} from '../globals'
+
+import { GLOBALS } from '../data/GLOBALS';
+
 import './BookMonsterList.css'
 
 const KEYS_TITLES = require('../data/AA_KEYS_TITLES.json')
@@ -92,7 +97,7 @@ const BookMonsterListLoader = (props: any) => {
     console.log("publish_id source: " + props.publish_id)
     useEffect(() => {
       axios
-        .get("http://127.0.0.1:8080" + "/api/catalog/" + props.publish_id)
+        .get(GLOBALS.API_ENDPOINT + "/api/catalog/" + props.publish_id)
         .then((res) => {
           setData(res.data)
         })
