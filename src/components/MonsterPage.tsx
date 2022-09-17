@@ -56,6 +56,10 @@ interface IMonsterPage {
             next_monster_key = "";
         }
 
+        // Setting image
+        console.log("Data for: ", data[0].monster_key)
+        console.log(data[0].monster_data.setting)
+        
         // console.log("data: ", data[0].monster_data)
         // console.log("Monster setting origin: ", data[0].monster_data.setting, cat_acronyms[data[0].monster_data.setting])
 
