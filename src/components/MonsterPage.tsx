@@ -6,7 +6,7 @@ import "./MonsterPage.css"
 import { Link, useParams } from 'react-router-dom';
 import Layout from './Layout';
 import MonsterBodyBlocks from './MonsterBlockBuilder';
-
+import RandomMonsterButton from './RandomMonsterButton';
 // import DataService
 import { DataService } from '../services/DataService'
 
@@ -57,10 +57,10 @@ interface IMonsterPage {
         }
 
         // Setting image
-        console.log("Data for: ", data[0].monster_key)
-        console.log(data[0].monster_data.setting)
+        // console.log("Data for: ", data[0].monster_key)
+        // console.log(data[0].monster_data.setting)
         
-        // console.log("data: ", data[0].monster_data)
+        console.log("data: ", data[0].monster_data)
         // console.log("Monster setting origin: ", data[0].monster_data.setting, cat_acronyms[data[0].monster_data.setting])
 
         return (
@@ -71,6 +71,10 @@ interface IMonsterPage {
                     <div className="monster-nav-links">
                         <div className="monster-nav">
                             <Link className="monster-nav-link" to={"/appendix/" + previous_monster_key}>Previous</Link>
+                        </div>
+                        {/* Random Monster */}
+                        <div className="monster-nav">
+                            <RandomMonsterButton />
                         </div>
                         <div className="monster-nav">
                             <Link className="monster-nav-link" to={"/appendix/" + next_monster_key}>Next</Link>
@@ -97,7 +101,7 @@ interface IMonsterPage {
                 </div>
                 
                 {/* Render with Interweave */}
-                <Interweave className= "interweave" content={data[0].monster_data.fullBody} />
+                <Interweave className="interweave" content={data[0].monster_data.fullBody} />
                 
                 {/* TSR Array */}
                 <div className="source-list">

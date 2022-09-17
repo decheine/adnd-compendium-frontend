@@ -5,12 +5,10 @@ import { GLOBALS } from '../data/GLOBALS';
 
 
 export class DataService {
-    static getBookData(id: string) {
-        throw new Error("Method not implemented.");
-    }
+    monsterTitles: Map<string, string> | undefined;
 
     // get monster titles from json file fetched from /api/appendix/all/titles
-    public async getMonsterTitles(): Promise<any> {
+    static async getMonsterTitles(): Promise<any> {
         console.log("calling getMonsterTitles");
         const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/appendix/all/titles");
         return response.data;
@@ -21,18 +19,18 @@ export class DataService {
         return response.data;
     }
 
-    // public async getAllMonsters(monster_key: any): Promise<any> {
-    //     const response = await axios.get("/api/appendix/" + monster_key);
-    //     return response.data;
-    // }
+    static async getMonsterKeys(): Promise<any> {
+        const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/appendix");
+        return response.data;
+    }
 
     // Get Book Data
-    public async getBookData(publish_id: any): Promise<any> {
+    static async getBookData(publish_id: any): Promise<any> {
         const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/catalog/" + publish_id);
         return response.data;
     }
 
-    public async getBookTitles(): Promise<any> {
+    static async getBookTitles(): Promise<any> {
         const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/data/book_titles");
         return response.data;
     }

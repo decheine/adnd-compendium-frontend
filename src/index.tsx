@@ -13,9 +13,11 @@ const root = ReactDOM.createRoot(
 declare global {
   var monster_titles: Map<string, string>;
   var book_titles: Map<string, string>;
+  var monster_keys: Array<string>;
+
 }
 
-const dataService = new DataService();
+// const dataService = new DataService();
 
 
 async function preLaunchOperation(){
@@ -24,15 +26,11 @@ async function preLaunchOperation(){
   console.log("global.monster_titles.size: " + global.monster_titles.size);
   if(global.monster_titles.size == 0){
     console.log("Loading monster titles");
-    await dataService.getMonsterTitles().then((data): any => {
-      // for loop iterating over item in data
-      // console.log(data);
-      for (let key in data) {
-        // console.log(data[key]);
-        globalThis.monster_titles.set(key, data[key]);
+    await DataService.getMonsterTitles().then((data): any => {
+      console.log("getMonsterTitles", data);
+      for(let key in data){
+        global.monster_titles.set(key, data[key]);
       }
-
-      console.log(data);
     });
   } else {
     console.log("Already loaded monster titles");
@@ -40,7 +38,7 @@ async function preLaunchOperation(){
 
   if(global.book_titles.size == 0){
     console.log("Loading book titles");
-    await dataService.getBookTitles().then((data): any => {
+    await DataService.getBookTitles().then((data): any => {
       // for loop iterating over item in data
       // console.log(data);
       for (let key in data) {
@@ -48,8 +46,17 @@ async function preLaunchOperation(){
         globalThis.book_titles.set(key, data[key]);
       }
 
-      console.log(data);
+      // console.log(data);
     });
+  }
+  
+  if(global.monster_keys === undefined){
+    global.monster_keys = new Array<string>();
+    await DataService.getMonsterKeys().then((data): any => {
+      // console.log(data);
+      global.monster_keys = data["monster_keys"];
+    });
+    console.log("global.monster_keys: ", global.monster_keys);
   }
 
   return;

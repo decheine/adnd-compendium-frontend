@@ -39,8 +39,8 @@ const BookPageLoader = () => {
           return response.json()
         })
         .then(data => {
-            console.log("book data: ", data[0]);
-            console.log("monster_keys: ", data[0].monster_keys)
+            // console.log("book data: ", data[0]);
+            // console.log("monster_keys: ", data[0].monster_keys)
             setMonsters(data[0].monster_keys);
             setTitle(data[0].title);
         })
@@ -95,10 +95,11 @@ const BookPageLoader = () => {
                     {
                     // Sort by monster_key (sorting by title is hard...)
                     monster_keys.sort().map((monster_key: string) => {
+                        // console.log("monster_key: ", monster_key)
                         return (
-                            <div className="list-entry" key={monster_titles.get(monster_key)}>
+                            <div className="list-entry" key={global.monster_titles.get(monster_key)}>
                                 <Link to={'/catalog/' + category + "/" + publish_id + "/" + monster_key} className="list-link">
-                                    {monster_titles.get(monster_key)}
+                                    {global.monster_titles.get(monster_key)}
                                 </Link>
                             </div>
                         )
@@ -106,7 +107,7 @@ const BookPageLoader = () => {
                     )
                     }
                     {
-                        console.log("monster_boxes: ", monster_keys.map((monster_key: string) => {return (monster_titles.get(monster_key))}).sort())
+                        // console.log("monster_boxes: ", monster_keys.map((monster_key: string) => {return (global.monster_titles.get(monster_key))}).sort())
                     }  
                     </>
                 </div>

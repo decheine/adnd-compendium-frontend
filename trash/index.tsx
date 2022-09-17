@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from '../App';
 import { DataService } from './services/DataService';
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from '../reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,6 +13,7 @@ const root = ReactDOM.createRoot(
 declare global {
   var monster_titles: Map<string, string>;
   var book_titles: Map<string, string>;
+  var monster_keys: Array<string>;
 }
 
 const dataService = new DataService();
@@ -51,6 +52,10 @@ async function preLaunchOperation(){
       console.log(data);
     });
   }
+
+  console.log("Getting monster keys")
+  global.monster_keys = new Array<string>();
+  await dataService
 
   return;
 }
