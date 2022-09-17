@@ -180,7 +180,7 @@ const MonsterPageLoader = () => {
         );
     } , [monster_key]);
     if (loading) {
-        return <div>Loading....</div>;
+        return <div className="loading">Loading....</div>;
     }
     if (error) {
         return <div>Error: {error}</div>;
