@@ -12,6 +12,7 @@
     margin: auto;
     /* variable named responsive-width */
     /* width: var(--responsive-width); */
+    padding-left: calc(100vw - 100%);
     
 }
 
