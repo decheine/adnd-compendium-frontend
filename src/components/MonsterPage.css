@@ -256,6 +256,13 @@ p.fi {
     font-weight: bold;
 }
 
+/* Random */
+div.RandomMonsterButton a {
+    color: #4169e1;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+}
 
 /* Loading */
 

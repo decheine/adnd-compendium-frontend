@@ -28,7 +28,7 @@ const MonsterLinks = () => {
     const monster_keys = Object.keys(KEYS_TITLES)
     const monster_links = monster_keys.map(monster_key => {
         return (
-                <MonsterLink monster_key={monster_key} title={myMap.get(monster_key) ? myMap.get(monster_key)! : ""} />
+                <MonsterLink key={monster_key} monster_key={monster_key} title={myMap.get(monster_key) ? myMap.get(monster_key)! : ""} />
         )
     }
     )
