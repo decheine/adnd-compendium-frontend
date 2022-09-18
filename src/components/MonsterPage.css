@@ -24,7 +24,8 @@ img.monster-image {
     /* display: block; */
     margin: 0px;
     /* margin:auto; */
-    width: 100%;
+    /* width: 100%; */
+    width: 300px;
     /* height: 100%; */
 
     /* shrink */
@@ -300,6 +301,13 @@ div.RandomMonsterButton a {
 
 @media screen and (max-width: 700px) {
     /* Make the image stack on top */
+    img.monster-image {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        float:none
+    }
     .monster-img-frame {
         display: block;
         /* justify-content: center; */
@@ -308,6 +316,6 @@ div.RandomMonsterButton a {
         margin: auto;
         max-width: 350px; 
         /* max-height: 420px; */
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 }

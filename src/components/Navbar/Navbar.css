@@ -263,7 +263,7 @@
     }
 
     /* Custom Hamburger menu */
-    a {
+    li.nav-item a {
         color: #fff;
         text-decoration: none;
       }
