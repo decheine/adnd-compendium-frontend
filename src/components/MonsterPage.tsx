@@ -9,6 +9,7 @@ import MonsterBodyBlocks from './MonsterBlockBuilder';
 import RandomMonsterButton from './RandomMonsterButton';
 // import DataService
 import { DataService } from '../services/DataService'
+import { JsxElement } from 'typescript';
 
 
 const KEYS_TITLES = require('../data/AA_KEYS_TITLES.json')
@@ -56,11 +57,69 @@ interface IMonsterPage {
             next_monster_key = "";
         }
 
-        // Setting image
-        // console.log("Data for: ", data[0].monster_key)
-        // console.log(data[0].monster_data.setting)
+        // Checking Main Image
+        //  If the regex pattern matches, know we NEED an image. So set the url to where it should be with monster_key
+        //  and also have an onerror="javascript:this.src='images/default.jpg'" to set the image to default if it doesn't exist
+        //  If doesn't need image, set the bool flag and no image will be rendered
+        let monster_image = null;
+        let has_image = true;
+        let needs_image = true;
+        let image_url = "";
+        // if(data[0].monster_data.images[1]) regex contains monster_key
+        if(data[0].monster_data.images[1] && data[0].monster_data.images[1].match(new RegExp(data[0].monster_key, "g"))){
+            console.log("Should have image")
+            needs_image = true;
+        } else {
+            console.log("Does not have image")
+            needs_image = false;
+        }
+
+        if(needs_image){
+            // Set image url
+            image_url = "/appendix/img/" + data[0].monster_key + ".gif"
+            let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+
+            monster_image = <img    src={image_url} 
+            className = "monster-image"
+            alt={data[0].monster_data.title} 
+            title={data[0].monster_data.title} 
+            onError={({currentTarget}) => {
+                currentTarget.onerror = null;
+                currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+            }}/>
+            
+
+            //     } else {
+            //         //placeholder image
+            //         monster_image = <img src="https://via.placeholder.com/300x360" alt="Placeholder image. Image not yet in database" className="monster-image" />
+            //     }
+            // });
+        } 
         
-        // console.log("data: ", data[0].monster_data)
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // if(data[0].monster_data.hasOwnProperty("image")){
+        //     image = data[0].monster_data.images[1];
+        // } else {
+        //     image = "https://via.placeholder.com/300x360";
+        // }
+        
+        console.log("data: ", data[0].monster_data)
         // console.log("Monster setting origin: ", data[0].monster_data.setting, cat_acronyms[data[0].monster_data.setting])
 
         return (
@@ -93,11 +152,7 @@ interface IMonsterPage {
                 <hr className ="hr2"/>
     
                 <div className="monster-img-frame">
-                <img    src={"/appendix/img/" + data[0].monster_key + ".gif"} 
-                        className = "monster-image"
-                        alt={data[0].monster_data.title} 
-                        title={data[0].monster_data.title} 
-                />
+                {monster_image}
                 </div>
                 
                 {/* Render with Interweave */}
