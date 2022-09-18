@@ -280,6 +280,12 @@ div.RandomMonsterButton a {
     z-index: 999;
 }
 
+/* Header images */
+h2 img {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 /* SIZING FOR MOBILE */
 
 @media screen and (max-width: 537px) {
