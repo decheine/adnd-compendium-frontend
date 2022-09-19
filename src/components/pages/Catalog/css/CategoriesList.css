@@ -3,53 +3,68 @@
     flex-wrap: wrap;
     justify-content: center;
   
-    margin-left: 15%;
-    margin-right: 15%;
+    /* margin-left: 15%; */
+    /* margin-right: 15%; */
   }
 
+  .CategoryList .setting-frame {
+    /* margin: 1em; */
+    /* height: auto; */
+    border:rgba(0, 0, 0, 0.25) 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin: 1em;
+  }
+
+  .CategoryList .category {
+    display: block;
+    padding: 8pt;
+  }
   
-  /* White background, rounded corners by 4px, drop shadow */
+  
+/* Setting Button will be a set size and have the image centered */
   .CategoryList .setting-button {
     background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* margin: 1em; */
+    /* border-bottom:rgba(0, 0, 0, 0.25) 4px solid; */
+    text-align: center;
+    /* center items vertically */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    margin: 1em;
-    font-family: 'Leksa Sans', sans-serif;
-    font-size: 14pt;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 48px;
-    text-align: center;
+    /* center items horizontally */
+    /* align-items: center; */
+    height: 42pt;
+    width: 260px;
+    /* object-fit: contain; */
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
     }
   
-  .CategoryList .setting-image {
+  /* .CategoryList .setting-image {
     width: 100px;
     height: 100px;
     margin-top: 1em;
     margin-bottom: 1em;
-  }
+  } */
   
-  .setting-text {
+  /* .setting-text {
     margin-top: 1em;
     margin-bottom: 1em;
-  }
-  
+  } */
 
-
-  .category {
-    padding: 2pt;
-  }
-  
   .catImg {
-    padding-left: 12pt;
+    /* padding-left: 12pt;
     padding-right: 12pt;
+    padding-bottom: 12pt;
+    padding-top: 12pt; */
+    /* width: 182px; */
+    /* padding: 12pt; */
+    /* margin: 1em; */
+    height: inherit;
+    width: inherit;
+    object-fit: contain;
+
   }
   

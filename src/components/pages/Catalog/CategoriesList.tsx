@@ -21,7 +21,7 @@ export function CategoriesList(){
         <div className="CategoryList">
             {Object.keys(CATEGORIES).map(( category: string)=>{
                 return (
-                    <div className={category} key={category}>
+                    <div className={"setting-frame"} title={category} key={category}>
                         <Link to={`/catalog/${ACRONYMS[category]}`} className="category">
                             <div className="setting-button">
                                 <img className="catImg" src={'/images/grf/' +  ACRONYMS[category] + '.gif'} alt={category + 'image'}></img>
