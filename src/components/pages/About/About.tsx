@@ -5,6 +5,7 @@ import { Interweave } from 'interweave';
 import { AppService } from '../../../services/app.service';
 
 export function About() {
+    document.title = "Complete Compendium - About"
     return (
         // upper page with category links
         <>

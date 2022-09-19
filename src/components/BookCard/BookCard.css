@@ -74,7 +74,8 @@
   }
   .book-card-header {
     /* position: relative; */
-    font-family: FrizQuadrata;
+    /* font-family: FrizQuadrata; */
+    font-family: 'Leksa Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;

@@ -67,10 +67,10 @@ interface IMonsterPage {
         let image_url = "";
         // if(data[0].monster_data.images[1]) regex contains monster_key
         if(data[0].monster_data.images[1] && data[0].monster_data.images[1].match(new RegExp(data[0].monster_key, "g"))){
-            console.log("Should have image")
+            // console.log("Should have image")
             needs_image = true;
         } else {
-            console.log("Does not have image")
+            // console.log("Does not have image")
             needs_image = false;
         }
 
@@ -96,30 +96,16 @@ interface IMonsterPage {
             // });
         } 
         
+        // Change document title to monster title
+        document.title = data[0].monster_data.title + " - Complete Compendium";
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // if(data[0].monster_data.hasOwnProperty("image")){
         //     image = data[0].monster_data.images[1];
         // } else {
         //     image = "https://via.placeholder.com/300x360";
         // }
         
-        console.log("data: ", data[0].monster_data)
+        // console.log("data: ", data[0].monster_data)
         // console.log("Monster setting origin: ", data[0].monster_data.setting, cat_acronyms[data[0].monster_data.setting])
 
         return (

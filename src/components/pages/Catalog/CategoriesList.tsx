@@ -22,10 +22,10 @@ export function CategoriesList(){
             {Object.keys(CATEGORIES).map(( category: string)=>{
                 return (
                     <div className={category} key={category}>
-                    <Link to={`/catalog/${ACRONYMS[category]}`} className="category">
-                    <div>
-                        <img className="catImg" src={'/images/grf/' +  ACRONYMS[category] + '.gif'} alt={category + 'image'}></img>
-                        </div>
+                        <Link to={`/catalog/${ACRONYMS[category]}`} className="category">
+                            <div className="setting-button">
+                                <img className="catImg" src={'/images/grf/' +  ACRONYMS[category] + '.gif'} alt={category + 'image'}></img>
+                            </div>
                         </Link>
                     </div>
                 );

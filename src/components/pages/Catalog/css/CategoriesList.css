@@ -6,7 +6,44 @@
     margin-left: 15%;
     margin-right: 15%;
   }
+
   
+  /* White background, rounded corners by 4px, drop shadow */
+  .CategoryList .setting-button {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 1em;
+    font-family: 'Leksa Sans', sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    }
+  
+  .CategoryList .setting-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .setting-text {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+
+
   .category {
     padding: 2pt;
   }

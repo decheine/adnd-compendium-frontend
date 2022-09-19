@@ -61,10 +61,7 @@ const MonsterLink = ( {monster_key, title }: MonsterLinkProps) => {
 export function Appendix() {
     // Set up the page variables
     // const itemCount = KEYS_TITLES.length;
-
-    
-
-
+    document.title = "Appendix - Complete Compendium"
     return (
         // upper page with category links
         <>

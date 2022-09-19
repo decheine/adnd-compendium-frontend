@@ -7,6 +7,8 @@ import "./Home.css";
 
 
 function Home() {
+  document.title = "AD&D Complete Compendium"
+
   return (
     <>
     {/* <Layout> */}

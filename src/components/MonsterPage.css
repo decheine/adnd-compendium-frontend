@@ -3,11 +3,15 @@
     --color-main-darker: #2B4285
 }
 
-.interweave p {
-    /* justify text */
-    text-align: justify;
-}
 
+.interweave p {
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-indent: 2em;
+    text-align: justify;
+
+}
 .monster-img-frame {
     display: block;
     /* justify-content: center; */
@@ -34,10 +38,11 @@ img.monster-image {
 }
 
 /* Setting Image */
-img.setting-image{
+.top-header img.setting-image{
     float:right;
-    width: auto;
+    /* width: auto; */
     /* height: 40px; */
+    width: 150px;
     
 }
 
@@ -47,6 +52,7 @@ div.top-header {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    height: 75px;
 }
 
 
@@ -212,7 +218,7 @@ table.ip tr.bk th{
 
 
 /* Paragraph and Text */
-p.ni {
+.interweave p.ni {
     text-indent: 0;
     margin-block-start: 4pt;
     margin-block-end: 4pt;
@@ -220,19 +226,14 @@ p.ni {
     margin-inline-end: 0px;
 }
 
-p.f {
+.interweave p.f {
     margin-top: 1em;
     text-indent: 0;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
   }
-p {
-    margin: 0;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    text-indent: 2em;
-}
-p.fi {
+
+.interweave p.fi {
     margin-top: 1em;
 }
 

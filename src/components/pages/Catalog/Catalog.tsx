@@ -10,6 +10,7 @@ import './css/Catalog.css'
 import Layout from '../../Layout';
 
 export function Catalog() {
+    document.title = "Catalog - Complete Compendium"
     return (
         // upper page with category links
         <>
