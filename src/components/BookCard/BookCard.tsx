@@ -15,7 +15,28 @@ import { Link } from 'react-router-dom';
 
 import "./BookCard.css"
 
-function BookCard(props: any){
+// BookCard props type
+type BookCardProps = {
+    id: string,
+    category: string,
+    title: string
+}
+
+function BookCard(props: BookCardProps){
+    let image_url = '/images/Books/Hi Resolution/' +  props.id + '.jpg'
+    let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+
+    let book_image = null;
+    book_image = <img    src={image_url} 
+            className = "book_img-2"
+            alt={props.title + 'Cover art'} 
+            title={props.title} 
+            onError={({currentTarget}) => {
+                currentTarget.onerror = null;
+                currentTarget.alt = "This monster is missing it's image. It will be found eventually.";
+                currentTarget.src = image_placeholder;
+                currentTarget.title = "Missing book cover image of " + props.title;
+            }}/>
     return (
         
 
@@ -39,7 +60,7 @@ function BookCard(props: any){
             <Link to={`/catalog/${props.category}/${props.id}`}  className="book-link">
             <div className="hover01 column">
                 <figure>
-                    <img className="book_img-2" src={'/images/Books/Hi Resolution/' +  props.id + '.jpg'} alt={props.title}/>
+                    {book_image}
                 </figure>
                 </div>
             </Link>

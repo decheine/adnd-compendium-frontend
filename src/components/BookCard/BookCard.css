@@ -59,7 +59,7 @@
     height: var(--img-height);
     width: var(--card-width);
     /* object-fit: cover; */
-    transition: transform .2s;
+    transition: transform 100ms;
     vertical-align: bottom;
   }
 
@@ -128,8 +128,8 @@
   .hover01 figure img {
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
+    -webkit-transition: 100ms ease-in-out;
+    transition: 100ms ease-in-out;
   }
   .hover01 figure:hover img {
     -webkit-transform: scale(1.1);
