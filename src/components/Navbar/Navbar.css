@@ -31,7 +31,10 @@
     font-size: 18pt;
     align-items: center;
     text-align: center;
-    font-family: Friz Quadrata;
+    /* font-family: Friz Quadrata; */
+    font-family: 'leksa-sans', sans-serif;
+    font-weight: 600;
+    flex: 6;
   }
   
   .nav-menu {
@@ -54,13 +57,13 @@
   
   .nav-item {
     /* height: var(--navbar-height); */
-    font-family: Friz Quadrata;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
+    /* font-family: Friz Quadrata; */
+    font-family: 'leksa-sans', sans-serif;
+    font-weight: 600;
+    font-size: 18pt;
     /* Standard */
     color: #4169e1;
-    
+    flex: 1;
 
     
   }
@@ -136,6 +139,29 @@
     .NavbarItems {
       position: relative;
     }
+    .navbar-container {
+      display: block;
+    }
+
+    .hover-underline-animation {
+      display: inline-block;
+      position: relative;
+      color: #0087ca;
+    }
+    
+    .hover-underline-animation:after {
+    }
+    
+    .hover-underline-animation:hover:after {
+    }
+  
+    .nav-links {
+    }
+  
+    .nav-links:after {
+      display: none;
+    }
+  
 
     .navbar1{
         background-color: var(--color-main-darker);
@@ -149,6 +175,7 @@
         width: 50%;
         /* height: 90vh; */
         position: absolute;
+        padding: 0px;
         
         grid-gap: 0;
         top: var(--navbar-height);
@@ -259,10 +286,12 @@
     }
   
     .navbar-logo {
+      /* display: none; */
       position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
+      left: 1rem;
+      padding-top: 12.5px;
+      /* height: 100%; */
+      /* transform: translate(25%, 50%); */
     }
   
     .menu-icon {

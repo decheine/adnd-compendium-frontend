@@ -33,11 +33,12 @@ function Navbar() {
     window.addEventListener('resize', showButton);
     if(!button){
         return (
-            <>
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                Home    
-            </Link>
+            <div className="navbar-container">
+            
             <div className="menu-mobile">
+                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    Home    
+                </Link>
                 <input type="checkbox" id="hamburger-input" className="burger-shower" />
                 <label id="hamburger-menu" htmlFor="hamburger-input">
                 <nav id="sidebar-menu">
@@ -86,7 +87,7 @@ function Navbar() {
                 </label>
                 <label className="overlay" htmlFor="hamburger-input"></label>
             </div>
-            </>
+            </div>
         )
     } else {
         return (
