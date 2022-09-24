@@ -8,24 +8,25 @@ import BreadCrumb from '../../BreadCrumb/BreadCrumbFrame';
 
 import './css/Catalog.css'
 import Layout from '../../Layout';
+import { AllBooksList } from './AllBooksList';
 
 export function Catalog() {
     document.title = "Catalog - Complete Compendium"
     return (
         // upper page with category links
-        <>
-        <Layout>
-            
+      <>
+      <Layout>
         <div className='background-catalog'>
-
-        <CategoriesList/>
-
-        <div className="CatalogDescription">Browse monster source books by setting or browse all at once.</div>
+          <CategoriesList/>
+          <div className="CatalogDescription">
+              Browse monster source books by setting or browse all at once.
+          </div>
+          {/* All Books */}
+          <AllBooksList/>
         </div>
-        </Layout>
-        </>
-
-        // lower page with all book list
+      </Layout>
+      </>
+      // lower page with all book list
     );
 }
 export default Catalog;
