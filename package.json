@@ -12,6 +12,8 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
+    "copyfiles": "^2.4.1",
+    "env-cmd": "^10.1.0",
     "fs": "^0.0.1-security",
     "interweave": "^13.0.0",
     "react": "^18.2.0",
@@ -32,6 +34,9 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
+    "copy": "copyfiles ./full_architecture.png ./public/images",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "react-scripts build",
