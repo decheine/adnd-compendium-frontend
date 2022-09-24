@@ -1,5 +1,5 @@
 import '../../../App.css';
-import Layout from '../../Layout';
+// import Layout from '../../Layout';
 // import Cards from '../Cards';
 import HeroSection from './HeroSection';
 import "./Home.css";

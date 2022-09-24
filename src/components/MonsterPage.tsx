@@ -85,7 +85,9 @@ interface IMonsterPage {
             title={data[0].monster_data.title} 
             onError={({currentTarget}) => {
                 currentTarget.onerror = null;
-                currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+                currentTarget.alt = "This monster is missing it's image. It will be found eventually.";
+                currentTarget.src = image_placeholder;
+                currentTarget.title = "Missing image of " + data[0].monster_data.title;
             }}/>
             
 
