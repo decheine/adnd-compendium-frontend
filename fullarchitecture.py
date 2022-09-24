@@ -38,7 +38,7 @@ with Diagram("Full Architecture", show=False):
     client = Client("User")
 
     with Cluster("CI/CD", graph_attr=cluster_attr_outer):
-        with Cluster("aadnd-frontend", graph_attr=cluster_attr_inner): 
+        with Cluster("adnd-frontend", graph_attr=cluster_attr_inner): 
             frontend_repo = Github("repository")
             frontend_actions = GithubActions("build and serve")
             frontend_repo >> frontend_actions
