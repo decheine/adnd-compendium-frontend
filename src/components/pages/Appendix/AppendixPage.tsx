@@ -19,7 +19,7 @@ import './AppendixPage.css';
 const MonsterLinks = () => {
 
     let myMap = new Map(Object.entries(KEYS_TITLES));
-    console.log(myMap)
+    // console.log(myMap)
 
 
     const monster_title = "Aarakath";

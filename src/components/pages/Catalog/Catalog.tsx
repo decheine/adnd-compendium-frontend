@@ -17,10 +17,10 @@ export function Catalog() {
       <>
       <Layout>
         <div className='background-catalog'>
-          <CategoriesList/>
           <div className="CatalogDescription">
-              Browse monster source books by setting or browse all at once.
+              Browse monster books by setting or browse all at once.
           </div>
+          <CategoriesList/>
           {/* All Books */}
           <AllBooksList/>
         </div>

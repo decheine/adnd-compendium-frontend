@@ -279,8 +279,8 @@
     }
   
     a.nav-links:hover {
-      background-color: #fff;
-      color: #242424;
+      /* background-color: #fff; */
+      /* color: #242424; */
       border-radius: 0;
       /*  */
     }
@@ -326,9 +326,9 @@
     }
   
     .nav-links-mobile:hover {
-      background: #fff;
-      color: #242424;
-      transition: 200ms;
+      /* background: #fff; */
+      /* color: #242424; */
+      /* transition: 200ms; */
     }
 
     /* Custom Hamburger menu */
@@ -409,6 +409,8 @@
         z-index: 120;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
+        --webkit-transform-style: preserve-3d;
+        
     }
     
     .menu1 a:first-child {

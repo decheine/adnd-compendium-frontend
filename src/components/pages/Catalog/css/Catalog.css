@@ -5,10 +5,11 @@
   }
   
   .CatalogDescription {
-    text-align: justify;
-    margin-top: 26pt;
-    margin-left: 20%;
-    margin-right: 20%;
+    font-family: 'leksa-sans';
+    text-align: center;
+    /* margin-top: 26pt; */
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .background-catalog {

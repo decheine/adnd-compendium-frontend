@@ -4,18 +4,21 @@
 }
 
 .overlay{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s ease-in-out;
+    /* --webkit-transition: opacity 2s ease-in-out; */
     overflow: hidden;
     background: black;
-    z-index: 0;
-    -webkit-backface-visibility: hidden;
+    /* padding-left: calc(100vw - 100%); */
+    /* z-index: 0; */
+    --webkit-backface-visibility: hidden;
+    --webkit-transform-style: preserve-3d;
 }
 
 #main-menu {
@@ -45,7 +48,7 @@
 }
 
 #main-menu a {
-  color: #fff;
+  /* color: #fff; */
   font-size: 1.5rem;
   text-decoration: none;
 }
@@ -62,8 +65,8 @@
 #hamburger-menu {
     position: relative;
     top: 25%;
-    /* right: calc(-(100vw - 20px)); */
-    left: -webkit-calc(100% - 45px);
+    right: calc(-(100vw - 20px));
+    left: -webkit-calc(100% - 50px);
     width: 30px;
     height: 30px;
     display: none;
@@ -91,7 +94,10 @@
     transition: 0.3s;
     padding: 0px 10px;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 1;
+    --webkit-backface-visibility: hidden;
+    --webkit-transform-style: preserve-3d;
+
 }
 
 #hamburger-menu h3 {
@@ -106,6 +112,7 @@
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  
 }
 
 #hamburger-menu ul {
@@ -121,23 +128,25 @@
   font-size: 1.4rem;
   text-decoration: none;
 }
-
+/* 
 #hamburger-menu a:hover {
   text-decoration: underline;
-}
+} */
 
 #hamburger-input:checked + #hamburger-menu #sidebar-menu {
     visibility: visible;
     /* right: 100%; */
-    left: calc(100% - 200px);
-    z-index: 2;
+    left: calc(100% - 200px + (100vw - 100%));
+    z-index: 3;
     
 }
 #hamburger-input:checked ~ .overlay{
    visibility: visible;
-  opacity: 0.4;
-  z-index: 2;
-  /* -webkit-transform: translateZ(0) */
+    opacity: 0.4;
+    transition-duration: 200ms;
+    z-index: 2;
+    /* padding-left: calc(); */
+  --webkit-transform: translateZ(0)
 }
 
 
@@ -145,9 +154,16 @@
   #main-menu {
     display: none;
     z-index: 3;
+    --webkit-backface-visibility: hidden;
+    --webkit-transform-style: preserve-3d;
+
   }
   #hamburger-menu {
     display: block;
     z-index: 3;
+    --webkit-backface-visibility: hidden;
+
+    --webkit-transform-style: preserve-3d;
+
   }
 }

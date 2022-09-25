@@ -11,8 +11,11 @@ import { DataService } from "../../../services/DataService";
 
 import './BookPage.css'
 
+import { GLOBALS } from '../../../data/GLOBALS';
 
 const ACRONYMS = require('../../../data/CatAcronyms.json')
+
+// import GLOBALS
 
 // Input Structure
 interface BookProps {
@@ -33,7 +36,7 @@ const BookPageLoader = () => {
     const [book_title, setTitle] = useState([])
   
     const fetchData = () => {
-      fetch("http://127.0.0.1:8080" + "/api/catalog/" + publish_id)
+      fetch(GLOBALS.API_ENDPOINT + "/api/catalog/" + publish_id)
         .then(response => {
             // console.log("response", response.json());
           return response.json()

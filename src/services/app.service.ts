@@ -3,10 +3,6 @@ import axios from 'axios';
 // import GLOBALS
 import { GLOBALS } from '../data/GLOBALS';
 
-const API: string = "http://127.0.0.1:8080";
-// const API: string = "http://3.18.51.8:8080";
-
-
 export class AppService {
 
 
