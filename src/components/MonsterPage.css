@@ -17,10 +17,14 @@
     /* justify-content: center; */
     /* margin:auto; */
     float: right;
+    
     /* margin-right: 12px; */
     /* max-width: 350px;  */
     /* max-height: 420px; */
     /* border: 1px solid black; */
+}
+.monster-img-frame:after {
+    clear: both;
 }
 
 /* Main Image */
@@ -37,6 +41,7 @@ img.monster-image {
     
 }
 
+
 /* Setting Image */
 .top-header img.setting-image{
     float:right;
@@ -52,18 +57,19 @@ div.top-header {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    height: 75px;
+    /* height: 75px; */
+
 }
 
 
 /* Headers */
-h1 {
+.top-header h1 {
     color: #4169e1;
     margin: 12px;
     margin-bottom: 0px;
     font-family: FrizQuadrata;
   }
-h2 {
+.top-header h2 {
     color: #4169e1;
     margin-bottom: 0;
 }
@@ -122,10 +128,15 @@ table.statblock {
 }
 
 table {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content; 
     border-collapse: collapse;
     border-spacing: 0;
     padding: 0px;
-    table-layout: fixed;
+    /* table-layout: fixed; */
+    /* overflow-x: auto; */
+    
 }
 
 th {
@@ -233,12 +244,18 @@ table.ip tr.bk th{
     margin-inline-end: 0px;
   }
 
+/* Scrollable statblock */
+
 .interweave p.fi {
     margin-top: 1em;
 }
 
+
 /* Nav text */
 .monster-nav-links{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60vw;
     height: var(--navbar-height);
     color: #fff;
     display: flex;
@@ -250,12 +267,17 @@ table.ip tr.bk th{
     padding: 0.5rem 1rem;
 }
 
+.monster-nav {
+    text-align: center;
+    flex: 1;
+}
 
 .monster-nav-link{
     color: #4169e1;
     text-decoration: none;
     font-size: medium;
     font-weight: bold;
+    text-align: center;
 }
 
 /* Random */
@@ -290,7 +312,9 @@ h2 img {
 /* SIZING FOR MOBILE */
 
 @media screen and (max-width: 537px) {
-    
+    .top-header h1{
+        font-size: 1.5em;
+    }
 
     img.monster-image {
         width: 100%;
@@ -307,6 +331,17 @@ h2 img {
   }
 
 @media screen and (max-width: 700px) {
+    table {
+        display: block;
+        max-width: -moz-fit-content;
+        max-width: fit-content; 
+        border-collapse: collapse;
+        border-spacing: 0;
+        padding: 0px;
+        /* table-layout: fixed; */
+        overflow-x: auto;
+        
+    }
     /* Make the image stack on top */
     img.monster-image {
         width: 100%;

@@ -183,6 +183,9 @@ interface IMonsterPage {
                             <Link className="monster-nav-link" to={"/appendix/" + previous_monster_key}>Previous</Link>
                         </div>
                         <div className="monster-nav">
+                            <RandomMonsterButton />
+                        </div>
+                        <div className="monster-nav">
                             <Link className="monster-nav-link" to={"/appendix/" + next_monster_key}>Next</Link>
                         </div>
                     </div>

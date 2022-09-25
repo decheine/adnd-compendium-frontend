@@ -107,7 +107,7 @@ function Navbar() {
                 <input type="checkbox" id="hamburger-input" className="burger-shower" onClick={handleClick}/>
                 {check.map((item, idx) => (
                   
-                  <label id="hamburger-menu" htmlFor="hamburger-input">
+                  <label id="hamburger-menu" htmlFor="hamburger-input" key="key">
                     <nav id="sidebar-menu">
                       <h3>Menu</h3>
                       <ul>
