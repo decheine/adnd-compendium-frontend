@@ -15,6 +15,15 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
   }
   
+  .navbar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--navbar-height);
+    max-width: 1300px;
+    overflow: hidden;
+  }
+
   .navbar-container {
     display: flex;
     justify-content: center;
@@ -25,6 +34,8 @@
   }
   
   .navbar-logo {
+    display: inline-block;
+    position: relative;
     color: #fff;
     justify-self: start;
     margin-left: 0px;
@@ -36,7 +47,25 @@
     /* font-family: Friz Quadrata; */
     font-family: 'leksa-sans', sans-serif;
     font-weight: 600;
-    flex: 6;
+    /* flex: 6; */
+  }
+
+  .navbar-logo:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: center center;
+    transition: transform 0.20s ease-out;
+  }
+
+  a.navbar-logo:hover:after {
+    transform: scaleX(1);
+    transform-origin: center center;
   }
   
   .nav-menu {

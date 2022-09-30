@@ -165,47 +165,49 @@ function Navbar() {
         return (
             <>
             <div className="navbar">
-              <Link to='/' className='navbar-logo'>
-                Home
-                
-              </Link>
-              <ul className='nav-menu'>
-                <li className='nav-item'>
-                  <Link to='/appendix' className='nav-links' onClick={closeMobileMenu}>
-                    Appendix
-                  </Link>
-                </li>
-                <li className='nav-item'>
-                  <Link
-                    to='/catalog'
-                    className='nav-links'
-                    // onClick={closeMobileMenu}
-                  >
-                    Catalog
-                  </Link>
-                </li>
-                <li className='nav-item'>
-                  <Link
-                    to='/about'
-                    className='nav-links'
-                    // onClick={closeMobileMenu}
-                  >
-                    About
-                  </Link>
-                </li>
-                {/* <li className='nav-item'>
-                  <Link
-                    to='/Search'
-                    className='nav-links'
-                    onClick={closeMobileMenu}
-                  >
-                    Search &nbsp;  
-                    <FontAwesomeIcon icon="search" />
-                  </Link>
-                </li> */}
-    
-              </ul> </div>
-              
+              <div className="navbar-wrapper">
+                <Link to='/' className='navbar-logo'>
+                  Home
+                  
+                </Link>
+                <ul className='nav-menu'>
+                  <li className='nav-item'>
+                    <Link to='/appendix' className='nav-links' onClick={closeMobileMenu}>
+                      Appendix
+                    </Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link
+                      to='/catalog'
+                      className='nav-links'
+                      // onClick={closeMobileMenu}
+                    >
+                      Catalog
+                    </Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link
+                      to='/about'
+                      className='nav-links'
+                      // onClick={closeMobileMenu}
+                    >
+                      About
+                    </Link>
+                  </li>
+                  {/* <li className='nav-item'>
+                    <Link
+                      to='/Search'
+                      className='nav-links'
+                      onClick={closeMobileMenu}
+                    >
+                      Search &nbsp;  
+                      <FontAwesomeIcon icon="search" />
+                    </Link>
+                  </li> */}
+      
+                </ul> 
+              </div>
+            </div>
             </>
         )
     }
