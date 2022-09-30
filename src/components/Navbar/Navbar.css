@@ -11,6 +11,8 @@
     z-index: 999;
     padding-left: calc(100vw - 100%);
     /* overflow: auto; */
+    /* Shadow */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
   }
   
   .navbar-container {
