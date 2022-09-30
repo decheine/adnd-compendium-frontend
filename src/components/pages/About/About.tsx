@@ -4,6 +4,7 @@ import Layout from "../../Layout";
 import { Interweave } from 'interweave';
 import { AppService } from '../../../services/app.service';
 import ZoomImage from './ZoomImage';
+import SearchComponent from './Search';
 
 export function About() {
     document.title = "Complete Compendium - About"
@@ -36,6 +37,10 @@ export function About() {
                     </button>
                 </div>
 
+                <div>
+                    <SearchComponent/>
+                </div>
+
                 <h1>About</h1>
 
                 <div className="about-body"> 
@@ -65,8 +70,9 @@ export function About() {
                 </div>
 
 
-
-
+                {/* Search Testing */}
+                <h3>Search Testing</h3>
+                
                     <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in enim blandit, hendrerit nunc ut, hendrerit nisl. Duis sapien ligula, iaculis ut orci at, viverra lobortis massa. Vivamus nibh nisl, venenatis a vulputate ut, mattis nec est. Sed a bibendum nisi, in sagittis tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eu nibh vitae nulla tempus ultricies. Curabitur ac odio orci. Morbi tincidunt est ac mauris eleifend efficitur. Donec sit amet urna elit.
 

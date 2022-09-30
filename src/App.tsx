@@ -14,7 +14,7 @@ import {Home, Catalog} from './components/pages';
 import {MonsterPageLoader } from './components/MonsterPage';
 // import {MonsterPage} from "./components/MonsterPage";
 import BookMonsterListLoader from "./components/BookMonsterList";
-import MonsterLink from './components/MonsterLink';
+// import MonsterLink from './components/MonsterLinks';
 import SettingPage from "./components/pages/Catalog/SettingPage";
 import BookPage from "./components/pages/Catalog/BookPage";
 import { About } from "./components/pages/About/About";

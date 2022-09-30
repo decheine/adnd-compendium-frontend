@@ -15,17 +15,20 @@ import Layout from '../../Layout';
 // import AppendixPage.css
 import './AppendixPage.css';
 
+type MonsterLinksProps = {
+    monster_keys: Object,
+}
 //for each monster_key in the KEYS_TITLES, display a link to the monster page
-const MonsterLinks = () => {
+const MonsterLinks = (props: MonsterLinksProps) => {
 
-    let myMap = new Map(Object.entries(KEYS_TITLES));
+    let myMap = new Map(Object.entries(props.monster_keys));
     // console.log(myMap)
 
 
     const monster_title = "Aarakath";
 
 
-    const monster_keys = Object.keys(KEYS_TITLES)
+    const monster_keys = Object.keys(props.monster_keys)
     const monster_links = monster_keys.map(monster_key => {
         return (
                 <MonsterLink key={monster_key} monster_key={monster_key} title={myMap.get(monster_key) ? myMap.get(monster_key)! : ""} />
@@ -74,7 +77,7 @@ export function Appendix() {
 
         <div className="AppendixDescription">Browse monster source books by setting or browse all at once.</div>
 
-        <MonsterLinks />
+        <MonsterLinks monster_keys={KEYS_TITLES}/>
 
 
         </div>
