@@ -6,7 +6,19 @@ import { AppService } from '../../../services/app.service';
 import ZoomImage from './ZoomImage';
 import SearchComponent from './Search';
 
+const Categories = require('../../../data/Categories.json');
+const CatAcronyms = require('../../../data/CatAcronyms.json');
+
 export function About() {
+
+    var books_setting: any = {}
+    for (const [index, value] of Object.entries(Categories)){
+        books_setting[value as string] = CatAcronyms[index]
+    }
+    console.log(books_setting)
+
+
+
     document.title = "Complete Compendium - About"
     return (
         // upper page with category links
