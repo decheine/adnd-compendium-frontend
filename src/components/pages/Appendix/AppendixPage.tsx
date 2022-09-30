@@ -24,10 +24,6 @@ const MonsterLinks = (props: MonsterLinksProps) => {
     let myMap = new Map(Object.entries(props.monster_keys));
     // console.log(myMap)
 
-
-    const monster_title = "Aarakath";
-
-
     const monster_keys = Object.keys(props.monster_keys)
     const monster_links = monster_keys.map(monster_key => {
         return (
