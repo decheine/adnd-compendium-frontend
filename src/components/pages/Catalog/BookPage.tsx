@@ -48,6 +48,8 @@ const BookPageLoader = () => {
             setTitle(data[0].title);
         })
     }
+    
+    window.scrollTo(0, 0);
   
     useEffect(() => {
       fetchData()
