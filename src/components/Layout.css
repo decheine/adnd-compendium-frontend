@@ -19,7 +19,7 @@
 
 .layout-main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 /* After 1400px in width */
 @media screen and (min-width: 1300px) {
