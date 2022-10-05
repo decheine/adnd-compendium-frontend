@@ -23,21 +23,21 @@ declare global {
 async function preLaunchOperation(){
   global.monster_titles = new Map<string, string>();
   global.book_titles = new Map<string, string>();
-  console.log("global.monster_titles.size: " + global.monster_titles.size);
+  // console.log("global.monster_titles.size: " + global.monster_titles.size);
   if(global.monster_titles.size == 0){
-    console.log("Loading monster titles");
+    // console.log("Loading monster titles");
     await DataService.getMonsterTitles().then((data): any => {
-      console.log("getMonsterTitles", data);
+      // console.log("getMonsterTitles", data);
       for(let key in data){
         global.monster_titles.set(key, data[key]);
       }
     });
   } else {
-    console.log("Already loaded monster titles");
+    // console.log("Already loaded monster titles");
   }
 
   if(global.book_titles.size == 0){
-    console.log("Loading book titles");
+    // console.log("Loading book titles");
     await DataService.getBookTitles().then((data): any => {
       // for loop iterating over item in data
       // console.log(data);
@@ -56,7 +56,7 @@ async function preLaunchOperation(){
       // console.log(data);
       global.monster_keys = data["monster_keys"];
     });
-    console.log("global.monster_keys: ", global.monster_keys);
+    // console.log("global.monster_keys: ", global.monster_keys);
   }
 
   return;

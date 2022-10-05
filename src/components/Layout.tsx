@@ -11,7 +11,7 @@ const Layout = ({ children } :any) => {
     return (
       <div className="layout">
         {pathname !== "/" ? <BreadCrumb title={breadCrumbs[1]} setting={breadCrumbs[2]} book={breadCrumbs[3]} monster_key={breadCrumbs[4]}/> : null}
-        <div>{children}</div>
+        <div className="layout-main">{children}</div>
       </div>
     );
 };

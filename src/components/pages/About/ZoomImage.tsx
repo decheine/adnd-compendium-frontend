@@ -62,7 +62,7 @@ class ZoomImage extends React.Component<ZoomImageProps>{
         return (
             // Base im age
             <>
-            <div className="ZoomImage">
+            <div className="RegularImage">
                 <img 
                         src={this.props.src} 
                         alt={this.props.alt} 
@@ -74,7 +74,7 @@ class ZoomImage extends React.Component<ZoomImageProps>{
                     />
             </div>
             {zoomed ? 
-             <div>
+             <div className="overlay" onClick={() => {this.setState({zoomed: !(this.state as any).zoomed}); console.log("clicked", this.state)}}>
                 <img 
                     src={this.props.src} 
                     alt={this.props.alt} 

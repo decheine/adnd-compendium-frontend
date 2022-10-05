@@ -6,7 +6,8 @@
     /* Gutter */
     /* margin-left: 4em; */
     /* margin-right: 4em; */
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-self: center;
     max-width: 82vw;
     margin: auto;
@@ -16,6 +17,10 @@
     
 }
 
+.layout-main {
+    display: flex;
+    flex-direction: row;
+}
 /* After 1400px in width */
 @media screen and (min-width: 1300px) {
     .layout {
