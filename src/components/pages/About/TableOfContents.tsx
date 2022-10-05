@@ -66,6 +66,9 @@ const Headings = (props: { headings: Array<any>, activeId: string|any }) => (
     {
     props.headings.map((heading: any) => (
       <li key={heading.id} className={heading.id === props.activeId ? "active" : "nonactive"}>
+      
+      <div className="toc-entry-wrapper">
+      <div className="bullet"></div>
       <a
           href={`#${heading.id}`}
           onClick={(e) => {
@@ -75,10 +78,13 @@ const Headings = (props: { headings: Array<any>, activeId: string|any }) => (
             });
           }}
         >{heading.title}</a>
-        {heading.items.length > 0 && console&& (
+        </div>
+        {heading.items.length > 0 && (
           <ul>
             {heading.items.map((child: any) => (
               <li key={child.id} className={child.id === props.activeId ? "active" : "nonactive"}>
+              <div className="toc-entry-wrapper-sub">
+              <div className="bullet"></div>
               <a
                   href={`#${child.id}`}
                   onClick={(e) => {
@@ -88,10 +94,12 @@ const Headings = (props: { headings: Array<any>, activeId: string|any }) => (
                     });
                   }}
                 >{child.title}</a>
+                </div>
               </li>
             ))}
           </ul>
         )}
+        
       </li>
     ))}
   </ul>
