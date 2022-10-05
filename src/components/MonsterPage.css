@@ -255,7 +255,8 @@ table.ip tr.bk th{
 .monster-nav-links{
     margin-left: auto;
     margin-right: auto;
-    max-width: 60vw;
+    /* max-width: 60vw; */
+    width: 100%;
     height: var(--navbar-height);
     color: #fff;
     display: flex;
@@ -264,12 +265,11 @@ table.ip tr.bk th{
     font-family: Friz Quadrata;
     align-items: center;
     text-decoration: none;
-    padding: 0.5rem 1rem;
 }
 
 .monster-nav {
     text-align: center;
-    flex: 1;
+    flex: auto;
 }
 
 .monster-nav-link{
@@ -331,6 +331,14 @@ h2 img {
   }
 
 @media screen and (max-width: 700px) {
+    /* top header */
+    div.top-header {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
     table {
         display: block;
         max-width: -moz-fit-content;
