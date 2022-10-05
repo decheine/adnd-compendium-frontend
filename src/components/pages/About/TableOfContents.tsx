@@ -48,7 +48,7 @@ const useIntersectionObserver = (setActiveId: React.Dispatch<React.SetStateActio
     }
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: '0px 0px -40% 0px',
+      rootMargin: '0px 0px 0px 0px',
     });
 
     const headingElements = Array.from(document.querySelectorAll("h2, h3"));
@@ -65,7 +65,7 @@ const Headings = (props: { headings: Array<any>, activeId: string|any }) => (
   <ul>
     {
     props.headings.map((heading: any) => (
-      <li key={heading.id} className={heading.id === props.activeId ? "active" : "nonactive"}>
+      <li key={heading.id} className={heading.id === props.activeId ? "active" : "inactive"}>
       
       <div className="toc-entry-wrapper">
       <div className="bullet"></div>
@@ -82,8 +82,8 @@ const Headings = (props: { headings: Array<any>, activeId: string|any }) => (
         {heading.items.length > 0 && (
           <ul>
             {heading.items.map((child: any) => (
-              <li key={child.id} className={child.id === props.activeId ? "active" : "nonactive"}>
-              <div className="toc-entry-wrapper-sub">
+              <li key={child.id} className={child.id === props.activeId ? "active" : "inactive"}>
+              <div className="toc-entry-wrapper">
               <div className="bullet"></div>
               <a
                   href={`#${child.id}`}

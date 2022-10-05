@@ -18,21 +18,37 @@ div.toc-entry-wrapper{
     flex-direction: row;
 }
 
-li.nonactive div .toc-entry-wrapper-sub .bullet {
+/* All list li */
+li.inactive, li.active{
+    list-style-type: none;
+    line-height: 28px;
+}
+
+/* All links */
+li.active > div > a{
+    color: #0E6FFF;
+
+}
+
+/* Both Bullets */
+/* li.active > div > .bullet, */
+
+/* Active Bullet */
+li.active > div > .bullet {
     list-style-type: disc;
     width: 8px;
     min-width: 8px;
     height: 8px;
     border-radius: 50%;
     border: 2px solid #0E6FFF;
-    /* background-color: #0E6FFF; */
+    background-color: #0E6FFF;
     margin: 8px;
     color: #0E6FFF;
     font-size: 16pt;
 }
 
-
-li.active .bullet {
+/* Inactive Bullet */
+li.inactive > div > .bullet {
     list-style-type: circle;
     width: 8px;
     min-width: 8px;
@@ -40,65 +56,13 @@ li.active .bullet {
     border-radius: 50%;
     border: 2px solid;
     margin: 8px;
+    color: var(--color-main-darker);
     font-size: 16pt;
 }
 
 
-li ul li .active .bullet{
-    list-style-type: circle;
-    width: 8px;
-    min-width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 2px solid;
-    margin: 8px;
-    font-size: 16pt;
-}
-
-
-li.active > a{
-    color: #0E6FFF;
-
-}
-
-li.nonactive {
-    list-style-type: none;
-}
-
-li.active {
-    list-style-type: none;
-}
-
-li.nonactive::marker {
-    list-style-type: circle;
-    width: 12px;
-    min-width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid;
-    margin: 12px;
-    font-size: 12pt;
-
-}
-
-
-li.active::marker {
-    
-    list-style-type: disc;
-    width: 8px;
-    min-width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 2px solid #0E6FFF;
-    /* background-color: #0E6FFF; */
-    margin: 8px;
-    color: #0E6FFF;
-    font-size: 16pt;
-}
-
-li.nonactive {
+li.inactive {
     color: var(--color-main-darker)
-
 }
 
 li > a:hover {
@@ -106,7 +70,7 @@ li > a:hover {
 }
 
 
-div.toc-bullet-filled {
+/* div.toc-bullet-filled {
     width: 8px;
     min-width: 8px;
     height: 8px;
@@ -123,7 +87,7 @@ div.toc-bullet-empty {
     border-radius: 50%;
     border: 2px solid;
     margin: 8px;
-}
+} */
 
 nav.toc {
     width: 220px;
