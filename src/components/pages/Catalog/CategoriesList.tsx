@@ -8,9 +8,11 @@ import './css/CategoriesList.css'
 // import CatAcronyms from '../../../data/CatAcronyms.json'
 const  CATEGORIES = require( '../../../data/Categories.json' )
 const ACRONYMS = require('../../../data/CatAcronyms.json')
+const WORLDS = require('../../../data/CatWorlds.json')
 // import { Router, Switch, Route } from 'react-router';
 
 // import { SettingPage } from "./SettingPage";
+
 
 
 export function CategoriesList(){
@@ -25,6 +27,11 @@ export function CategoriesList(){
                         <Link to={`/catalog/${ACRONYMS[category]}`} className="category">
                             <div className="setting-button">
                                 <img className="catImg" src={'/images/grf/' +  ACRONYMS[category] + '.gif'} alt={category + 'image'}></img>
+                                
+                                <div className="setting-subtitle">
+                                    <div className="setting-title">{category}</div>
+                                    <div className="setting-world">{WORLDS[category]}</div>
+                                </div>
                             </div>
                         </Link>
                     </div>

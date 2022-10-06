@@ -1,0 +1,19 @@
+{
+"Advanced Dungeons & Dragons 2nd Edition": "Generic Monsters",
+"Al-Qadim (Forgotten Realms)": "Zakhara (Toril)",
+"Birthright": "Cerilia",
+"Dark Sun": "Athas",
+"Dragonlance": "Krynn",
+"Forgotten Realms": "Toril",
+"Greyhawk": "Oerth",
+"The Horde (Forgotten Realms)": "Hordelands (Toril)",
+"Kara-Tur (Forgotten Realms)": "Kara-Tur (Toril)",
+"Lankhmar": "Nehwon ",
+"Masque of the Red Death (Ravenloft)": "Gothic Earth",
+"Maztica" (Forgotten Realms): "Maztica (Toril)",
+"Mystara": "The Known World",
+"Planescape": "the Great Wheel",
+"Ravenloft": "Demiplane of Dread",
+"Red Steel (Mystara)": "Savage Coast (Mystara)",
+"Spelljammer": "Outer Space/All"
+}

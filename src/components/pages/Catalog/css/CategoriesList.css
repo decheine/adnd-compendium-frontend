@@ -24,8 +24,11 @@
   }
 
   .CategoryList .category {
-    display: block;
+    /* display: block; */
+    display: flex;
     padding: 8pt;
+    text-decoration: none;
+
   }
   
   
@@ -39,10 +42,10 @@
     /* center items vertically */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     /* center items horizontally */
     /* align-items: center; */
-    height: 42pt;
+    /* height: 42pt; */
     width: 260px;
     /* object-fit: contain; */
     /* padding-left: 1em; */
@@ -69,9 +72,37 @@
     /* width: 182px; */
     /* padding: 12pt; */
     /* margin: 1em; */
-    height: inherit;
-    width: inherit;
+    /* height: inherit; */
+    padding-bottom: 12pt;
+    height: 60px;
+    /* flex-shrink: 1; */
+    /* height:  */
+    /* width: inherit; */
     object-fit: contain;
 
   }
   
+
+  .setting-subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    text-decoration: none;
+  }
+
+  .setting-title {
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    font-family: Helvetica, sans-serif;
+    /* margin-top: 1em; */
+    /* margin-bottom: 1em; */
+  }
+
+  .setting-world {
+    color: black;
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+  }

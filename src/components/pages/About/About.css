@@ -12,6 +12,10 @@ h2, h3 {
     scroll-margin-top: 4rem;
 }
 
+.about-wrapper{
+    display: flex;
+    flex-direction: row;
+}
 
 div.toc-entry-wrapper{
     display: flex;
@@ -25,6 +29,17 @@ li.inactive, li.active{
 }
 
 /* All links */
+li.active > div > a{
+    color: #0E6FFF;
+
+}
+
+/* Hover Effect */
+li.inactive > div > a:hover {
+    color: #0E6FFF;
+
+}
+
 li.active > div > a{
     color: #0E6FFF;
 
@@ -65,9 +80,6 @@ li.inactive {
     color: var(--color-main-darker)
 }
 
-li > a:hover {
-    color: #0E6FFF;
-}
 
 
 /* div.toc-bullet-filled {

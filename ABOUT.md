@@ -4,8 +4,7 @@ This is for the About Page. Typing the content I want.
 
 ## Summary
 
-What is Advanced Dungeons & Dragons:  Advanced Dungeons & Dragons (AD&D) 2nd Edition is a table top roleplaying game published by TSR inc. 
-
+What is Advanced Dungeons & Dragons:  Advanced Dungeons & Dragons (AD&D) 2nd Edition is a table top roleplaying game published by TSR inc. Over the decades of its life, hundreds of products were published for AD&D 2nd Edition, and with them, thousands of monsters. This website is a compendium of all of the monsters across all of the books published for AD&D 2nd Edition. 
 
 ### Motivation
 
@@ -13,26 +12,82 @@ What is Advanced Dungeons & Dragons:  Advanced Dungeons & Dragons (AD&D) 2nd Edi
 
 
 ### Purpose
+This is a project to create a comprehensive compendium of all the monsters accross the entire Advanced Dungeons and Dragons 2nd Edition collection.
 
+The original creator of this project was a man known only by the name <a href="https://web.archive.org/web/20180818101608/http://lomion.de/cmm/_index.php">Lomion</a>, who
+created a website with a similar goal. Unfortunately, the website is no longer online.
 
 
 ## Architecture
 
+
+
 Describe how the data has been collected, and how it makes it's way to the screen.
 
-PICTURE OF ARCHITECTURE
 
-## Planned Features
+Started with downloading the entire directory of lomion.de from the Wayback Machine through some command line operations.
 
-- List of planned features
+Then with all the mosnter file html documents, I build a harvester program in C++ to collect all the data so that it may be uploaded to a database. The harvester also collected the publicaiton ID numbers of its sourcebook(s), so I can organize the monsters by book. Then the theming of the pages indicates the campaign setting the monster is most prominent, so I can organize the monsters by setting/world. 
+
+I wanted to turn this project into a fully deployed application available for the public. So the next steps were to set up a database to store the monster data; naturally an API is required to publish to and retrieve data form the database. 
+
+I chose PostgreSQL over other database platforms due to its rich toolset, but mainly support for Arrays and built in indexing and lookup system so searches can be done natively by the database.
+
+For the API I wanted something simple but scalable if I wanted. So I chose NodeJS with Express as the web framework and Sequelize to communicate with the Database. I figured these two services could be hosted on AWS EC2 instances, I do not anticipate sustained high traffic but the workload isn't heavy so even the smallest EC2 could support a few users making requests at once.
+
+Now for the Continuous Deployment and Integration. I wanted the cheapest, most streamlined way to harvest monster data when more data is collected. I chose to use GitHub Actions to run a Docker container running the harvester. GitHub Actions then publishes the latest data via the API. Authentication is done by requesting AWS permissions for the IP of the GitHub Actions runner and then requesting to remove them after publication is finished. 
+
+For the frontend application I chose React for its statefulness, hooks, and option for whatever complexity I would want in the future. This React application is hosted on GitHub pages, which is a low price if the repo is private and free if it is public. I want to keep this public, in order to do so I'll need to find a way of obfuscating the API endpoint IP.
+
+For CI/CD for the API, the EC2 instance running it is set at a remote for the repository, so when new tags are published, the changes get pushed to the remote server and the server is updated automatically. 
+
+Thus the entire pipeline should be online continuously and I am free to upgrade each of the pieces, 
 
 
-## Changelog
+## Features
+
+### Appendix
+
+A comprehensive list of all the monsters on a single page. This page simply lists all monster titles and links them with their corresponding monster key. 
+
+### Catalog
+
+Here you can browse through all of the books and sources that contain monsters. You can also browse by campaign settting/world. 
+
+### Search
+
+Implemented a simple lookup of the database for monsters based on lexemes in each of the monsters multiple titles. Of course, CTRL + F  on the Appendix page works just fine as well. 
+
+## Future
+
+### Planned Features
+
+#### Priority
+
+List of features that I intend to implement and add to the site.
+
+- Add the "How to Use this Book" / "The Monsters" page. Have each `MonsterPage` link to this page too.
+- Appendix Title Redudancy mode. Switch that toggles on/off Redudancy mode, which displays all aliases of all monsters. Take caution when doing this since there are over 7000 titles and this page will not perform well on lower-spec devices. Warning will be placed next to it. Maybe React detects if device can support it and will hide the option entirely if it detects a lower spec device. 
+- Add a table of contents to the Appendix
+
+#### Stretch Goals
+
+- Lore:
+    - Baatezu Promotion and Demotion
+    - The Comlete Golem Table
+    - The Planes of Existence
+- Pages:
+    - Similar Monster page like a Monstrous Classification Page
+- Glossary for terms
+- Complete Spell Description list so you can hover over spells and see what they do.
+
+
+### Changelog
 
 - Start with Version v1.0. Look into changelog format
 
 
-
+---
 
 
 Need to have:
@@ -61,3 +116,10 @@ Later
 - "How to Use This Book" page like in all the other monster compendiums
 
 ...
+
+
+## Monster Data To-Do
+
+Running list of bugs, errors, missing data, and other tasks that need to be done to complete the Compendium.
+
+- Elemental of Chaos, fire/water ()
