@@ -4,26 +4,25 @@ This is for the About Page. Typing the content I want.
 
 ## Summary
 
-What is Advanced Dungeons & Dragons:  Advanced Dungeons & Dragons (AD&D) 2nd Edition is a table top roleplaying game published by TSR inc. Over the decades of its life, hundreds of products were published for AD&D 2nd Edition, and with them, thousands of monsters. This website is a compendium of all of the monsters across all of the books published for AD&D 2nd Edition. 
+    What is Advanced Dungeons & Dragons:  Advanced Dungeons & Dragons (AD&D) 2nd Edition is a table top roleplaying game published by TSR inc. Over the decades of its life, hundreds of products were published for AD&D 2nd Edition, and with them, thousands of monsters. This website is a compendium of all of the monsters across all of the books published for AD&D 2nd Edition. 
 
 ### Motivation
 
-    My friends and I played 2nd edition religiously in high school. I stumbled across a site called lomion.de where someone had created a complete appendix of all ad&d 2nd edition monsters. *All* of them. We love to use it and explore the vast collection, but the site was quite archaic and barebones in terms of functionality. Unfortunately, the site went down around 2014. However, it was indexed many times by the Wayback machine. So I sought to resurrect the site and bring the complete monstrous compendium of 2nd Edition D&D to life with lots of navigational and explorational features. 
+My friends and I played 2nd edition religiously in high school. I stumbled across a site called lomion.de where someone had created a complete appendix of all ad&d 2nd edition monsters. *All* of them. We love to use it and explore the vast collection, but the site was quite archaic and barebones in terms of functionality. Unfortunately, the site went down around 2014. However, it was indexed many times by the Wayback machine. So I sought to resurrect the site and bring the complete monstrous compendium of 2nd Edition D&D to life with lots of navigational and explorational features. 
+
+The scope of AD&D content dwarfs all other editions of Dungeons & Dragons. All these monsters serve well as inspriation and starting points, valuable to Game Masters of all fantasy table top roleplaying games. 
 
 
 ### Purpose
+
 This is a project to create a comprehensive compendium of all the monsters accross the entire Advanced Dungeons and Dragons 2nd Edition collection.
 
-The original creator of this project was a man known only by the name <a href="https://web.archive.org/web/20180818101608/http://lomion.de/cmm/_index.php">Lomion</a>, who
-created a website with a similar goal. Unfortunately, the website is no longer online.
+The original creator of this project was a man known only by the name [Lomion](https://web.archive.org/web/20180818101) , who created a website with a similar goal. Unfortunately, the website went down around 2018. It's departure, however, motivated me to build this.
 
 
 ## Architecture
 
-
-
 Describe how the data has been collected, and how it makes it's way to the screen.
-
 
 Started with downloading the entire directory of lomion.de from the Wayback Machine through some command line operations.
 
@@ -66,9 +65,11 @@ Implemented a simple lookup of the database for monsters based on lexemes in eac
 
 List of features that I intend to implement and add to the site.
 
+- Format this About page better
 - Add the "How to Use this Book" / "The Monsters" page. Have each `MonsterPage` link to this page too.
 - Appendix Title Redudancy mode. Switch that toggles on/off Redudancy mode, which displays all aliases of all monsters. Take caution when doing this since there are over 7000 titles and this page will not perform well on lower-spec devices. Warning will be placed next to it. Maybe React detects if device can support it and will hide the option entirely if it detects a lower spec device. 
 - Add a table of contents to the Appendix
+
 
 #### Stretch Goals
 
@@ -81,10 +82,58 @@ List of features that I intend to implement and add to the site.
 - Glossary for terms
 - Complete Spell Description list so you can hover over spells and see what they do.
 
-
 ### Changelog
 
 - Start with Version v1.0. Look into changelog format
+
+
+## Monster Data To-Do
+
+Running list of bugs, errors, missing data, and other tasks that need to be done to complete the Compendium.
+
+### Need to be added
+
+| Monster               | Filename     | Source #            |
+| --------------------- | ------------ | ------------------- |
+| The Queen of Chaos    | queofcha.php | 1145 pg 204         |
+| Triphegs              | triphegs.php |                     |
+| Wild Hunt             | wildhunt.php | birthrite 3140?     |
+| Miska the Wolf-spider | wospmisk.php | planescape          |
+| Elven horse           | yyllethy.php | dragon magazine 269 |
+|                       |              |                     |
+|                       |              |                     |
+|                       |              |                     |
+|                       |              |                     |
+
+### Missing Information
+
+| Monster     | Filename     | Missing         | Source    |
+| ----------- | ------------ | --------------- | --------- |
+| Aboleth     | aboleth.html | Ecology Section | 2140 pg 6 |
+| Angler Fish |              |                 |           |
+|             |              |                 |           |
+|             |              |                 |           |
+
+### Broken Pages
+
+| Monster         | Filename | Missing | Source |
+| --------------- | -------- | ------- | ------ |
+| Mammal, Minimal | mammmini |         | 2103   |
+|  Chaos elemental fire/water               |          |   needs better image      |        |
+|                 |          |         |        |
+
+### Strange Monsters
+
+| Monster  | Filename | Note                                                                                              |
+| -------- | -------- | ------------------------------------------------------------------------------------------------- |
+| Moldling | moldling | Source listed as "The Lonesome Road, Shawn Mulder". Must find true origin. Could be Die Vecna Die |
+|          |          |                                                                                                   |
+|          |          |                                                                                                   |
+
+### Missing Books
+
+- I, Tyrant
+- Alternity?
 
 
 ---
@@ -117,9 +166,3 @@ Later
 
 ...
 
-
-## Monster Data To-Do
-
-Running list of bugs, errors, missing data, and other tasks that need to be done to complete the Compendium.
-
-- Elemental of Chaos, fire/water ()
