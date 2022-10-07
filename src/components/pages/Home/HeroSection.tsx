@@ -1,19 +1,25 @@
 import '../../../App.css';
 import './HeroSection.css';
 
+import RandomMonsterButton from '../../RandomMonsterButton';
+
 function HeroSection() {
   return (
     <div className='hero-container'>
-      <div>
-        <img className="add" src="images/ADD.svg" alt="Advanced dungeons and dragons 2nd edtion"></img>
+      
+      <h1 className="adnd" >Advanced Dungeons & Dragons 2nd Edition</h1>
+      <h2>Complete Monstrous <br/>Compendium</h2>
+
+      {/* Random Monster Button */}
+      <div className="random_monster_button">
+        {/* <a href="/monsters/Random Monster" className="random_monster_button_link">Random Monster</a> */}
+        <RandomMonsterButton />
       </div>
       
-      <h1>Monstrous Compendium</h1>
-      <h2>Complete*</h2>
-      <h3>Appendix</h3>
-    <div className="hero_tsr">
+
+    {/* <div className="hero_tsr">
       <img src="images/tsr.png" height="150px" alt="TSR logo"></img>
-    </div>
+    </div> */}
     </div>
   );
 }

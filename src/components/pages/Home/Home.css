@@ -1,7 +1,15 @@
 :root {
-    --color-main-darker: #2b4285;
+    --color-main-darker: #1250A2;
   }
   
+  .home {
+    background-color: #F3F4F6;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+
   .add {
     display: block;
     margin-left: auto;
@@ -28,14 +36,14 @@
   }
   
   .summary {
-    padding: 2rem;
+    /* padding: 2rem; */
   }
   
   .summary_banner_container {
-    display: block;
+    /* display: block; */
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    max-width: 80%;
   }
   
   .summary_banner {
@@ -93,6 +101,12 @@
   @media screen and (max-width: 960px) {
     .summary_img_container {
       display: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .summary_par {
+      font-size: 16px;
     }
   }
   

@@ -89,6 +89,7 @@ export function About() {
             <li>Add the "How to Use this Book" / "The Monsters" page. Have each <code>MonsterPage</code> link to this page too.</li>
             <li>Appendix Title Redudancy mode. Switch that toggles on/off Redudancy mode, which displays all aliases of all monsters. Take caution when doing this since there are over 7000 titles and this page will not perform well on lower-spec devices. Warning will be placed next to it. Maybe React detects if device can support it and will hide the option entirely if it detects a lower spec device. </li>
             <li>Add a table of contents to the Appendix</li>
+            <li>Automate the missing data reporting process. Store missing data reports in the database, create some simple format for me to enter a new "report". Probably just a csv file with fields like "monster_key", "report description", "known source"</li>
             </ul>
             <h4 className="atx" id="stretch-goals">Stretch Goals</h4>
             <ul>
