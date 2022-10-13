@@ -22,7 +22,7 @@ import { About } from "./components/pages/About/About";
 import './App.css';
 import BreadCrumb from "./components/BreadCrumb/BreadCrumbFrame";
 import Appendix from "./components/pages/Appendix/AppendixPage";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const routes = [
@@ -54,6 +54,9 @@ function App() {
     <Router>
       <Navbar/>
       {/* <BreadCrumb title="Home"/> */}
+      <ScrollToTop>
+
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Catalog" element = {<Catalog/>} />
@@ -66,6 +69,7 @@ function App() {
         <Route path="/appendix" element = {<Appendix/>}/>
         <Route path="/appendix/:monster_key" element = {<MonsterPageLoader/>}/>
       </Routes>
+      </ScrollToTop>
     </Router>
     </>
   );
