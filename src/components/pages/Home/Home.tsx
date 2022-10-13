@@ -3,6 +3,7 @@ import { Cards } from './Cards';
 // import Layout from '../../Layout';
 // import Cards from '../Cards';
 import HeroSection from './HeroSection';
+import Footer from '../../Footer';
 import "./Home.css";
 // import Footer from '../Footer';
 
@@ -33,11 +34,9 @@ function Home() {
           This website has resurrected the efforts of an another, the creator of lomion.de, archived by the wayback machine. I coded an extractor for harvesting monster data from all these files and putting it into a database. Read more about my process on the About page.
           </p>
         </div>
-    
-    
+      </div>
     </div>
-    </div>
-    {/* </Layout> */}
+    <Footer />
     </div>
     </>
   );

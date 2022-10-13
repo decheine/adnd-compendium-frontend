@@ -27,7 +27,7 @@
     object-fit: contain;
 
     /* inner shadow */
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px -4px 6px rgba(0, 0, 0, 0.25);
   
     /* Rectangle 7 */
   
@@ -36,7 +36,7 @@
     /* transform: rotate(90deg); */
   }
   
-  .hero-container > h1 {
+  .hero-container > h1.adnd {
     /* Monstrous Compendium */
   
     /* Monstrous Title 2 */
@@ -54,6 +54,8 @@
   letter-spacing: 0.11em;
   text-transform: uppercase;
   margin-top: 4rem;
+  padding-left: 1em;
+  padding-right: 1em;
   /* Blue Medium */
 
   color: #1250A2;
@@ -78,6 +80,9 @@
     margin-block-end: unset;
     margin-inline-start: unset;
     margin-inline-end: unset;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
 
   }
 

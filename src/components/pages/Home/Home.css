@@ -36,7 +36,9 @@
   }
   
   .summary {
-    /* padding: 2rem; */
+    padding: 2rem;
+    /* position: relative; */
+    padding-bottom: 6rem;
   }
   
   .summary_banner_container {
@@ -94,6 +96,16 @@
         format("woff");
     font-weight: normal;
     font-style: normal;
+  }
+
+  @font-face {
+    font-family: "HelveticaNeue";
+    src: url("./HelveticaNeue-Medium.otf");
+  }
+
+  @font-face {
+    font-family: "Helvetica CE 55 Roman";
+    src: url("./Helvetica\ Neue\ CE\ 55\ Roman.ttf")
   }
   
   /* Mobile view  */

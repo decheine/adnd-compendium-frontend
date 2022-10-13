@@ -18,7 +18,8 @@
     border-radius: 12px;
     /* Ratio of 88/85 */
     width: 270px;
-    height: 290px;
+    /* height: 290px; */
+    min-height: 290px;
     /* Shadow */
     box-shadow: 10px 10px 50px rgba(39, 92, 141, 0.10);
 }
@@ -31,7 +32,7 @@
     align-content: center;
     /* margin: 0 auto; */
     /* padding: 44px; */
-    height: 100%;
+    min-height: 290px;
     /* width: 100%; */
 }
 
@@ -47,12 +48,14 @@
     font-style: normal;
     font-weight: 600;
     font-size: 2rem;
-    line-height: 58px;
+    /* line-height: 58px; */
+
     width: 100%;
     /* identical to box height */
 
     text-transform: capitalize;
     padding-bottom: 1rem;
+    padding-top: 1rem;
     /* Base/Black */
 
     color: #23242A;
