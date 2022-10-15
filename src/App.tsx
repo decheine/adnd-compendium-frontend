@@ -23,6 +23,7 @@ import './App.css';
 import BreadCrumb from "./components/BreadCrumb/BreadCrumbFrame";
 import Appendix from "./components/pages/Appendix/AppendixPage";
 import ScrollToTop from "./components/ScrollToTop";
+import { SearchPage } from "./components/pages/Search/SearchPage";
 
 
 const routes = [
@@ -68,6 +69,8 @@ function App() {
         {/* Appendix */}
         <Route path="/appendix" element = {<Appendix/>}/>
         <Route path="/appendix/:monster_key" element = {<MonsterPageLoader/>}/>
+        {/* Search */}
+        <Route path="/Search" element = {<SearchPage/>} />
       </Routes>
       </ScrollToTop>
     </Router>

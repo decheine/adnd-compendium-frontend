@@ -4,7 +4,7 @@ import Layout from "../../Layout";
 import { Interweave } from 'interweave';
 import { AppService } from '../../../services/app.service';
 import ZoomImage from './ZoomImage';
-import SearchComponent from './Search';
+import SearchComponent from '../Search/Search';
 import TableOfContents from './TableOfContents';
 
 import './About.css';

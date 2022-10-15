@@ -194,7 +194,7 @@ function Navbar() {
                       About
                     </Link>
                   </li>
-                  {/* <li className='nav-item'>
+                  <li className='nav-item'>
                     <Link
                       to='/Search'
                       className='nav-links'
@@ -203,7 +203,7 @@ function Navbar() {
                       Search &nbsp;  
                       <FontAwesomeIcon icon="search" />
                     </Link>
-                  </li> */}
+                  </li>
       
                 </ul> 
               </div>
