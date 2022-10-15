@@ -1,5 +1,5 @@
 :root {
-    --responsive-width: 1400px;
+    --responsive-width: 1200px;
 }
 
 .layout-wrapper {
@@ -30,7 +30,7 @@
     flex-direction: column;
 }
 /* After 1400px in width */
-@media screen and (min-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .layout {
         max-width: calc(0.82 * var(--responsive-width));
     }
