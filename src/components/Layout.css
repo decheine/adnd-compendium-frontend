@@ -32,14 +32,15 @@
 /* After 1400px in width */
 @media screen and (max-width: 1300px) {
     .layout {
-        max-width: calc(0.82 * var(--responsive-width));
+        /* max-width: calc(0.80 * var(--responsive-width)); */
+        max-width: 82vw;
     }
 }
 
 @media screen and (max-width: 700px) {
     .layout {
-        max-width: calc(90vw);
-        padding-left: 1rem;
-        padding-right: 1rem;
+        max-width: 82vw;
+        /* padding-left: 1rem; */
+        /* padding-right: 1rem; */
     }
 }
