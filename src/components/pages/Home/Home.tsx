@@ -4,6 +4,7 @@ import { Cards } from './Cards';
 // import Cards from '../Cards';
 import HeroSection from './HeroSection';
 import Footer from '../../Footer';
+import {StatisticBlock} from './Statistics';
 import "./Home.css";
 // import Footer from '../Footer';
 
@@ -21,6 +22,7 @@ function Home() {
     <Cards />
     {/* <Footer /> */}
 
+    <StatisticBlock />
 
     {/* Intro section, image left, text right */}
     <div className="summary">

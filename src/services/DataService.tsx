@@ -35,4 +35,9 @@ export class DataService {
         return response.data;
     }
 
+    static async getStatistics(): Promise<any> {
+        const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/statistics");
+        return response.data;
+    }
+
 }
