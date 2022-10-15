@@ -10,9 +10,6 @@ import { GLOBALS } from '../data/GLOBALS';
 
 import './BookMonsterList.css'
 
-const KEYS_TITLES = require('../data/AA_KEYS_TITLES.json')
-
-
 function BookMonsterList({data}: any) {
     if(!data || data[0] === undefined){
         // console.log("data == null")
@@ -52,7 +49,7 @@ function BookMonsterList({data}: any) {
                         return 0; //default return value (no sorting)
                        })
                     .map((monster_key: string) => 
-                        <MonsterLink monster_key={monster_key} monster_title={KEYS_TITLES[monster_key]} />
+                        <MonsterLink monster_key={monster_key} monster_title={global.book_titles.get(monster_key)} />
                         // <li>{global.monster_titles.get(monster_key)}</li>
                     
                     )

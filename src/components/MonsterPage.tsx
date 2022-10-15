@@ -12,7 +12,6 @@ import { DataService } from '../services/DataService'
 import { JsxElement } from 'typescript';
 
 
-const KEYS_TITLES = require('../data/AA_KEYS_TITLES.json')
 const sortedtsr = require('../data/sortedtsr.json')
 const cat_acronyms = require('../data/CatAcronyms.json')
 
@@ -38,8 +37,10 @@ function SlimMonsterPage({data}: any) {
 
     let previous_monster_key = "";
     let next_monster_key = "";
-
-    const monster_keys = Object.keys(KEYS_TITLES);  
+    console.log("global.monster_titles", global.monster_titles)
+    console.log("global.monster_titles.keys", global.monster_titles.keys() )
+    const monster_keys = Array.from(global.monster_titles.keys()) ;  
+    console.log("monster_keys", monster_keys)
     const index = monster_keys.indexOf(data[0].monster_key.toString());
     if(index > 0 && index < monster_keys.length - 1){
         // console.log("first")

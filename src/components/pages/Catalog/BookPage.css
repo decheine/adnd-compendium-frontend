@@ -112,10 +112,10 @@ h5.card-title{
 
 
 .background {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     inset: 0;
-    height: 200%;
+    height: 100%;
     background-image: url("../../../../public/images/paper.jpg");
     background-size: cover;
     /* background-position: center; */

@@ -45,6 +45,8 @@ function App() {
   // const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   // const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
+  // Load the catalog
+
 
   return (
     <>
@@ -70,7 +72,7 @@ function App() {
         <Route path="/appendix" element = {<Appendix/>}/>
         <Route path="/appendix/:monster_key" element = {<MonsterPageLoader/>}/>
         {/* Search */}
-        <Route path="/Search" element = {<SearchPage/>} />
+        <Route path="/search" element = {<SearchPage/>} />
       </Routes>
       </ScrollToTop>
     </Router>

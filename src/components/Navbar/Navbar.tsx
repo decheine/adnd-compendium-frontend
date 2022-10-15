@@ -144,7 +144,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                           <Link
-                            to='/Search'
+                            to='/search'
                             className='nav-links'
                             onClick={handleClick}
                           >
@@ -196,9 +196,9 @@ function Navbar() {
                   </li>
                   <li className='nav-item'>
                     <Link
-                      to='/Search'
+                      to='/search'
                       className='nav-links'
-                      onClick={closeMobileMenu}
+                      // onClick={closeMobileMenu}
                     >
                       Search &nbsp;  
                       <FontAwesomeIcon icon="search" />

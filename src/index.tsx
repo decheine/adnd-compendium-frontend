@@ -14,6 +14,7 @@ declare global {
   var monster_titles: Map<string, string>;
   var book_titles: Map<string, string>;
   var monster_keys: Array<string>;
+  var catalog: Array<Object>
 
 }
 
@@ -57,6 +58,14 @@ async function preLaunchOperation(){
       global.monster_keys = data["monster_keys"];
     });
     // console.log("global.monster_keys: ", global.monster_keys);
+  }
+
+  if(global.catalog === undefined){
+    global.catalog = new Array<Object>();
+    await DataService.getCatalog().then((data: Promise<any>): any => {
+      // global.catalog = data;
+      console.log("DataSErvice getCatalog,",data )
+    });
   }
 
   return;
