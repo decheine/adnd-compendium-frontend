@@ -12,7 +12,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import './BreadCrumbFrame.css'
 // import { title } from 'process';
 const Acronyms = require('../../data/AcronymsSetting.json')
-const Titles = require('../../data/AA_KEYS_TITLES.json')
 
 
 // class BreadCrumbElement extends React.Component {
@@ -55,7 +54,7 @@ class BreadCrumb extends React.Component<MyProps> {
         this.state = { counter: 0 };
         // this.handleClick = this.handleClick.bind(this);
     }
-
+    
     // will render the breadcrumb depending on the page
     // if the page is catalog, it will render the breadcrumb for catalog
     // if the page is setting, it will render the breadcrumb for setting
@@ -66,6 +65,7 @@ class BreadCrumb extends React.Component<MyProps> {
         // console.log("book: " + this.props.book)
         // console.log("setting: " + this.props.setting)
         // console.log("monster_key: " + this.props.monster_key)
+        
         if(this.props.title == "Home"){
             return (
                 <></>
@@ -74,6 +74,7 @@ class BreadCrumb extends React.Component<MyProps> {
             // console.log("Book id: ", this.props.book)
             // console.log("Books: ", global.book_titles)
             // console.log("Book title: ", global.book_titles.get(this.props.book!))
+            
             return (
                 <>
                 <div className="bc-frame">
@@ -114,7 +115,12 @@ class BreadCrumb extends React.Component<MyProps> {
                 </div>
                 </>
             )
-        } else if (this.props.title == "appendix") {
+        } 
+        else if (this.props.title == "appendix") {
+            // this.props.book ? console.log("Titles", Titles[this.props.setting])
+            var setting_text = ""
+            setting_text = global.monster_titles.get(this.props.setting!)!
+            // console.log("Appendix setting: ", this.props.book, setting_text)
             return (
                 <>
                 <div className="bc-frame">
@@ -122,11 +128,11 @@ class BreadCrumb extends React.Component<MyProps> {
                         <BreadCrumbElement link={"/" +this.props.title} text={ this.props.title}/>
                         {this.props.setting ?
                         <>
-                        {/* Right Arrow */}
-                        <div className='arrow-box'>
-                            <FontAwesomeIcon icon="angle-right" className='right-arrow' />
-                        </div>
-                            <BreadCrumbElement link={"/appendix/" + this.props.setting} text={Titles[this.props.setting]}/>
+                            {/* Right Arrow */}
+                            <div className='arrow-box'>
+                                <FontAwesomeIcon icon="angle-right" className='right-arrow' />
+                            </div>
+                            <BreadCrumbElement link={"/appendix/" + this.props.setting} text={setting_text}/>
                         </>
                         : null
                     }
@@ -136,7 +142,7 @@ class BreadCrumb extends React.Component<MyProps> {
                 </div>
                 </>
             )
-                } 
+        } 
 
     }
 }

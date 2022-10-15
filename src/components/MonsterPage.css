@@ -61,6 +61,14 @@ div.top-header {
 
 }
 
+.top-header > a {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
 
 /* Headers */
 .top-header h1 {

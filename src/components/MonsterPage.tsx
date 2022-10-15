@@ -37,10 +37,10 @@ function SlimMonsterPage({data}: any) {
 
     let previous_monster_key = "";
     let next_monster_key = "";
-    console.log("global.monster_titles", global.monster_titles)
-    console.log("global.monster_titles.keys", global.monster_titles.keys() )
+    // console.log("global.monster_titles", global.monster_titles)
+    // console.log("global.monster_titles.keys", global.monster_titles.keys() )
     const monster_keys = Array.from(global.monster_titles.keys()) ;  
-    console.log("monster_keys", monster_keys)
+    // console.log("monster_keys", monster_keys)
     const index = monster_keys.indexOf(data[0].monster_key.toString());
     if(index > 0 && index < monster_keys.length - 1){
         // console.log("first")
