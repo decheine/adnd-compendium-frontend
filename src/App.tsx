@@ -73,6 +73,8 @@ function App() {
         <Route path="/appendix/:monster_key" element = {<MonsterPageLoader/>}/>
         {/* Search */}
         <Route path="/search" element = {<SearchPage/>} />
+        <Route path="/search/:monster_key" element = {<MonsterPageLoader/>} />
+
       </Routes>
       </ScrollToTop>
     </Router>

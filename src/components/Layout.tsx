@@ -8,7 +8,7 @@ import './Layout.css'
 const Layout = ({ children } :any) => {
     const { pathname } = useLocation();
     const breadCrumbs = pathname.split("/");
-    // console.log("pathname: " + pathname, breadCrumbs)
+    console.log("pathname: " + pathname, breadCrumbs)
     // console.log("Breadcrumb:", breadCrumbs)
     return (
       <div className="layout-wrapper">

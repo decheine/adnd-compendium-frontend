@@ -143,6 +143,29 @@ class BreadCrumb extends React.Component<MyProps> {
                 </>
             )
         } 
+        else {
+            setting_text = global.monster_titles.get(this.props.setting!)!
+            return (
+                <>
+                <div className="bc-frame">
+                    <div className="breadcrumb">
+                        <BreadCrumbElement link={"/" +this.props.title} text={ this.props.title}/>
+                        {this.props.setting ?
+                        <>
+                            {/* Right Arrow */}
+                            <div className='arrow-box'>
+                                <FontAwesomeIcon icon="angle-right" className='right-arrow' />
+                            </div>
+                            <BreadCrumbElement link={"/appendix/" + this.props.setting} text={setting_text}/>
+                        </>
+                            : null
+                        }
+                        <div className="bc-bg"/>
+                    </div>
+                </div>
+                </>
+            )
+        }
 
     }
 }

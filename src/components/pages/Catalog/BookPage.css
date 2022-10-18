@@ -83,19 +83,23 @@ h5.card-title{
     font-weight: 600;
     margin: auto;
     margin-top: 10px;
-    max-width: 900px;
+    /* max-width: 900px; */
+    width: 80%;
 }
 
 .list-flexbox {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    
+    display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
 }
 
 .list-entry {
-    flex-grow: 1;
-    width: 25%;
-    font-size : large;
+    /* flex-grow: 1; */
+    /* width: max-content; */
+    font-size : medium;
     padding: 10px;
     border: 1px solid grey;
     border-radius: 4px;
@@ -103,6 +107,7 @@ h5.card-title{
     background-color: white;
     z-index: 1;
     margin: 0.5em;
+    /* flex: 1 1 120px; */
 }
 
 .list-link{
@@ -120,4 +125,17 @@ h5.card-title{
     background-size: cover;
     /* background-position: center; */
     background-repeat: repeat;
+}
+
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    /* z-index: 999; */
 }

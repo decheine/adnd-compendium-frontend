@@ -12,7 +12,9 @@ export function SearchPage() {
         <Layout>
             <div className="search-page">
                 <div className="search-banner">
-                    <h1>Search for Monsters</h1>
+                    <div className="title">
+                        <h1>Search for Monsters</h1>
+                    </div>
                     <SearchComponent />
                 </div>
             </div>

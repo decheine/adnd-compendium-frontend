@@ -67,7 +67,7 @@
   .book-card-header-rectangle {
     border-radius: 12px 12px 0px 0px;
     height: var(--card-header-height);
-    background-color: #2b4285;
+    background-color: var(--color-main-darker);
     display: flex;
     justify-content: center;
     align-items: center;

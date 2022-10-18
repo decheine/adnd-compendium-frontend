@@ -5,7 +5,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"; 
 import Layout from "../../Layout";
 
-import { BookList } from "./BookList";
+import { BookList } from "./BookList"; 
+
+import MonsterList from "../../MonsterList";
 
 import { DataService } from "../../../services/DataService";
 
@@ -94,29 +96,7 @@ const BookPageLoader = () => {
 
             {/* Monster List */}
             <h3>Monsters</h3>
-            <div className="list-container">
-                <div className="list-flexbox">
-                    <>
-                    {
-                    // Sort by monster_key (sorting by title is hard...)
-                    monster_keys.sort().map((monster_key: string) => {
-                        // console.log("monster_key: ", monster_key)
-                        return (
-                            <div className="list-entry" key={global.monster_titles.get(monster_key)}>
-                                <Link to={'/catalog/' + category + "/" + publish_id + "/" + monster_key} className="list-link">
-                                    {global.monster_titles.get(monster_key)}
-                                </Link>
-                            </div>
-                        )
-                    }
-                    )
-                    }
-                    {
-                        // console.log("monster_boxes: ", monster_keys.map((monster_key: string) => {return (global.monster_titles.get(monster_key))}).sort())
-                    }  
-                    </>
-                </div>
-            </div>
+            <MonsterList monster_keys={monster_keys} url_suffix={'/catalog/' + category + "/" + publish_id + "/"}/>
         </Layout>
         </>
     )
