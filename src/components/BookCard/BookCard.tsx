@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom';
  * @returns 
  */
 
-// import CATEGORIES from '../../Categories.json'
-// import BOOKS from '../../sortedtsr.json'
 
 import "./BookCard.css"
 

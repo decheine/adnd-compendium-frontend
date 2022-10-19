@@ -9,18 +9,11 @@ import TableOfContents from './TableOfContents';
 
 import './About.css';
 
-const Categories = require('../../../data/Categories.json');
 const CatAcronyms = require('../../../data/CatAcronyms.json');
 
 
 
 export function About() {
-
-    var books_setting: any = {}
-    for (const [index, value] of Object.entries(Categories)){
-        books_setting[value as string] = CatAcronyms[index]
-    }
-    console.log(books_setting)
 
 
 
