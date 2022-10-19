@@ -10,11 +10,21 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+type SettingType = {
+  setting_key: string,
+  setting_name: string,
+  source_books: Array<string>
+}
+
 declare global {
   var monster_titles: Map<string, string>;
   var book_titles: Map<string, string>;
   var monster_keys: Array<string>;
   var catalog: Array<Object>
+  var settings: Array<SettingType>
+  var setting_titles: Array<string>;
+  var categories_books: Map<string, Array<string>>;
+  // var categories_books: Object;
 
 }
 
@@ -60,13 +70,41 @@ async function preLaunchOperation(){
     // console.log("global.monster_keys: ", global.monster_keys);
   }
 
+  if(global.settings === undefined){
+    global.settings = new Array<SettingType>();
+    await DataService.getSettings().then((data): any => {
+      global.settings = data;
+      console.log("DataService getSettings,",data )
+    });
+  }
+
+  if(global.setting_titles === undefined){
+    global.setting_titles = new Array<string>();
+    for(let i = 0; i < global.settings.length; i++){
+      global.setting_titles.push(global.settings[i].setting_name);
+    }
+  }
+
   if(global.catalog === undefined){
     global.catalog = new Array<Object>();
-    await DataService.getCatalog().then((data: Promise<any>): any => {
-      // global.catalog = data;
+    await DataService.getCatalog().then((data): any => {
+      global.catalog = data;
       console.log("DataSErvice getCatalog,",data )
     });
   }
+
+  if(global.categories_books === undefined){
+    global.categories_books = new Map<string, Array<string>>();
+    // if(global.catalog !== undefined){
+    //   global.catalog
+    // }
+    // await DataService.getCategoriesBooks().then((data): any => {
+    //   global.categories_books = data;
+    //   console.log("DataService getCategoriesBooks,",data )
+    // });
+  }
+
+
 
   return;
 }

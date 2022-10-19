@@ -1,11 +1,7 @@
 import React from 'react'
 import { FixedSizeList as List } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
-// import { SettingPage } from './SettingPage';
-// import { CategoriesList } from './CategoriesList';
-// import { Router, Switch, Route } from 'react-router';
 import BreadCrumb from '../../BreadCrumb/BreadCrumbFrame';
-// import CATEGORIES from '../../Categories.json'
 import KEYS_TITLES from '../../../data/AA_KEYS_TITLES.json'
 
 // import './css/Catalog.css'

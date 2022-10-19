@@ -40,9 +40,15 @@ export class DataService {
         return response.data;
     }
 
-    static async getCatalog(): Promise<any> {
+    static async getSettings(): Promise<any> {
         const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/settings");
-        console.log(response)
+        console.log("DataService", response)
+        return response.data;
+    }
+
+    static async getCatalog(): Promise<any> {
+        const response = await axios.get(GLOBALS.API_ENDPOINT + "/api/catalog");
+        console.log("DataService", response)
         return response.data;
     }
 

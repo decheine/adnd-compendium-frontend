@@ -6,7 +6,6 @@ import React from "react";
 import { Link } from "react-router-dom"; 
 import './css/CategoriesList.css'
 // import CatAcronyms from '../../../data/CatAcronyms.json'
-const  CATEGORIES = require( '../../../data/Categories.json' )
 const ACRONYMS = require('../../../data/CatAcronyms.json')
 const WORLDS = require('../../../data/CatWorlds.json')
 // import { Router, Switch, Route } from 'react-router';
@@ -16,12 +15,18 @@ const WORLDS = require('../../../data/CatWorlds.json')
 
 
 export function CategoriesList(){
-    console.log("Categories Keys: ", Object.keys(CATEGORIES), "")
+    // create a map from setting to book list from the global.settings
+    let settings = new Array<string>;
+    for(let i = 0; i < global.settings.length; i++){
+         settings.push(global.settings[i].setting_name);
+    }
+    console.log("Settings: ", global.setting_titles)
+
     return (
         <>
         
         <div className="CategoryList">
-            {Object.keys(CATEGORIES).map(( category: string)=>{
+            {settings.map(( category: string)=>{
                 return (
                     <div className={"setting-frame"} title={category} key={category}>
                         <Link to={`/catalog/${ACRONYMS[category]}`} className="category">

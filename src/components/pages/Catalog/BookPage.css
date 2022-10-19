@@ -46,21 +46,21 @@
 }
 
 .col-1{
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
     align-self: auto;
     flex-grow: 0;
 }
 
 .col-2 {
     padding: 8px;
-    border: 1px dashed red;
+    /* border: 1px dashed red; */
     flex-direction: column;
     justify-content: flex-start;
     flex-grow: 1
 }
 
 .card-body{
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
     font-family: 'leksa-sans', sans-serif;
     font-size: 14pt;
     font-weight: 500;
@@ -73,7 +73,7 @@ h3 {
 h5.card-title{
     font-size: 1.5rem;
     font-family: 'leksa-sans', sans-serif;
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
     margin: 0px;
 }
 
@@ -121,7 +121,7 @@ h5.card-title{
     z-index: -1;
     inset: 0;
     height: 100%;
-    background-image: url("../../../../public/images/paper.jpg");
+    /* background-image: url("../../../../public/images/paper.jpg"); */
     background-size: cover;
     /* background-position: center; */
     background-repeat: repeat;

@@ -56,6 +56,9 @@ const BookPageLoader = () => {
     useEffect(() => {
       fetchData()
     }, [])
+
+    let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+
   
     return (
         <>
@@ -67,25 +70,28 @@ const BookPageLoader = () => {
             <div className="frame">
                 <div className="card-1">
                     <div className="col-1">
-                        <img src={'/images/Books/Hi Resolution/' +  publish_id + '.jpg'} className="card-img"/>
+                        <img src={'/images/Books/Hi Resolution/' +  publish_id + '.jpg'} className="card-img"
+                        onError={({currentTarget}) => {
+                            currentTarget.onerror = null;
+                            currentTarget.alt = "This monster is missing it's image. It will be found eventually.";
+                            currentTarget.src = image_placeholder;
+                            currentTarget.title = "Missing book cover image of " + book_title;
+                        }}/>
                     </div>
                     <div className="col-2">
                         <h5 className="card-title">{book_title}</h5>
                         <div className="card-body">
                             <div className="card-text">
-                                TODO: Properties of this book including:
+                                <p>Book Description</p>
                                 <ul>
                                     <li>
                                         <strong>Author:</strong>
                                     </li>
                                     <li>
-                                        <strong>Year:</strong>
+                                        <strong>Year:</strong> {""}
                                     </li>
                                     <li>
-                                        <strong>Cool Quote</strong>
-                                    </li>
-                                    <li>
-                                        <strong>Monster Count? :</strong>
+                                        <strong>Monster Count:</strong> {monster_keys.length}
                                     </li>
                                 </ul>
                             </div>

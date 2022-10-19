@@ -1,10 +1,6 @@
 import React from 'react'
 
-// import { SettingPage } from './SettingPage';
 import { CategoriesList } from './CategoriesList';
-// import { Router, Switch, Route } from 'react-router';
-import BreadCrumb from '../../BreadCrumb/BreadCrumbFrame';
-// import CATEGORIES from '../../Categories.json'
 
 import './css/Catalog.css'
 import Layout from '../../Layout';
