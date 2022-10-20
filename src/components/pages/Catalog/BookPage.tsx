@@ -36,6 +36,8 @@ const BookPageLoader = () => {
     const [bookData, setBookData] = useState([])
     const [monster_keys, setMonsters] = useState([])
     const [book_title, setTitle] = useState([])
+    const [author, setAuthor] = useState([])
+    const [year, setYear] = useState([])
   
     const fetchData = () => {
       fetch(GLOBALS.API_ENDPOINT + "/api/catalog/" + publish_id)
@@ -48,6 +50,8 @@ const BookPageLoader = () => {
             // console.log("monster_keys: ", data[0].monster_keys)
             setMonsters(data[0].monster_keys);
             setTitle(data[0].title);
+            setAuthor(data[0].author);
+            setYear(data[0].year);
         })
     }
     
@@ -59,6 +63,10 @@ const BookPageLoader = () => {
 
     let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
 
+    if(publish_id !== undefined){
+        // let book_page = global.catalog.get(publish_id);
+        // console.log("book_page: ", book_page)
+    }
   
     return (
         <>
@@ -82,13 +90,12 @@ const BookPageLoader = () => {
                         <h5 className="card-title">{book_title}</h5>
                         <div className="card-body">
                             <div className="card-text">
-                                <p>Book Description</p>
                                 <ul>
                                     <li>
-                                        <strong>Author:</strong>
+                                        <strong>Author:</strong>  {author}
                                     </li>
                                     <li>
-                                        <strong>Year:</strong> {""}
+                                        <strong>Year:</strong> {year}
                                     </li>
                                     <li>
                                         <strong>Monster Count:</strong> {monster_keys.length}

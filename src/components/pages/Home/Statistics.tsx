@@ -49,11 +49,28 @@ export const StatisticBlock = () => {
             }
         }
     }, []);
+    console.log(data)
+    // if data is not null and has members, render the statistics
+    var settings_number
+    var books_number
+    var pages_number
+    var unique_number;
+    // if (data === null){
+        settings_number = data === null ? "..." : Number(data[0]["stat_value"]).toLocaleString('en', {useGrouping: true});
+        books_number = data == null ? "..." : Number(data[1]["stat_value"]).toLocaleString('en', {useGrouping: true});
+        pages_number = data == null ? "..." : Number(data[2]["stat_value"]).toLocaleString('en', {useGrouping: true});
+        unique_number = data == null ? "..." : Number(data[3]["stat_value"]).toLocaleString('en', {useGrouping: true});
+    // }
+    // if (data && data.settings_number
+    //     && data.books_number
+    //     && data.pages_number
+    //     && data.unique_number) {
+    //         var settings_number = data === null ? "..." : Number(data[0]["stat_value"]).toLocaleString('en', {useGrouping: true});
+    //         var books_number = data == null ? "..." : Number(data[1]["stat_value"]).toLocaleString('en', {useGrouping: true});
+    //         var pages_number = data == null ? "..." : Number(data[2]["stat_value"]).toLocaleString('en', {useGrouping: true});
+    //         var unique_number = data == null ? "..." : Number(data[3]["stat_value"]).toLocaleString('en', {useGrouping: true});
+    //     }
 
-    var settings_number = data == null ? "..." : Number(data[0]["stat_value"]).toLocaleString('en', {useGrouping: true});
-    var books_number = data == null ? "..." : Number(data[1]["stat_value"]).toLocaleString('en', {useGrouping: true});
-    var pages_number = data == null ? "..." : Number(data[2]["stat_value"]).toLocaleString('en', {useGrouping: true});
-    var unique_number = data == null ? "..." : Number(data[3]["stat_value"]).toLocaleString('en', {useGrouping: true});
 
 
     return (
