@@ -1,11 +1,15 @@
 
 # Deployment
 
-## Steps for Deployment
+## Compendium API
+
+The API
+
+### Steps for Deployment
 
 Want to take myself through the steps taken for each Release Version of each component.
 
-### Initial Deployment
+#### Initial Deployment
 
 Draft
 
@@ -30,6 +34,34 @@ To deploy to production, from local machine, run
 ```
 git push production main
 ```
+
+#### Future Release Deployment
+
+Walk through the steps from making code changes to deploying.
+
+First check out the devel branch and make changes to it, testing on my own machine. 
+
+When satisfied with the additions/changes, do an important last step: make necessary changes to switch from local to deployment, like the IP address. 
+
+might change this up to be more streamlined. Like when running `npm start ...` locally, the code uses the local code, and when running `npm start <deployment> whatever` remotely, the code uses the proper remote code.
+
+
+
+
+## Compendium Frontend
+
+This repository.
+
+### Deployment
+
+Simple to deploy, once changes are made, GitHub pages is automatically built and served, no further action needed as long as it passes.
+
+## Data Harvester
+
+
+## Notes
+
+
 
 
 
