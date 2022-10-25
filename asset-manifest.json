@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.aea51484.css",
+    "main.js": "/react-gh-pages/static/js/main.88490ee6.js",
+    "static/js/787.ed1277f6.chunk.js": "/react-gh-pages/static/js/787.ed1277f6.chunk.js",
+    "static/media/paper.jpg": "/react-gh-pages/static/media/paper.a85843d9ef4efcee9c38.jpg",
+    "static/media/Helvetica Neue CE 55 Roman.ttf": "/react-gh-pages/static/media/Helvetica Neue CE 55 Roman.4f783501d063adaf01d7.ttf",
+    "static/media/HelveticaNeue-Medium.otf": "/react-gh-pages/static/media/HelveticaNeue-Medium.d098854788a0f5fab91c.otf",
+    "index.html": "/react-gh-pages/index.html",
+    "main.aea51484.css.map": "/react-gh-pages/static/css/main.aea51484.css.map",
+    "main.88490ee6.js.map": "/react-gh-pages/static/js/main.88490ee6.js.map",
+    "787.ed1277f6.chunk.js.map": "/react-gh-pages/static/js/787.ed1277f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aea51484.css",
+    "static/js/main.88490ee6.js"
+  ]
+}

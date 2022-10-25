@@ -1,0 +1,153 @@
+body {
+    scrollbar-base-color: #4169e1;
+    scrollbar-arrow-color: #dc143c;
+    scrollbar-track-color: #ffd700;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-family: "ZapfCalligraphic801";
+    font-size: 16px;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 20px;
+  }
+  p.nav {
+    text-indent: 0;
+    text-align: center;
+    font-size: small;
+    margin-left: 150px;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:link {
+    color: #0000c0;
+  }
+  /* a:visited {
+   color:#4b0082; } */
+  a:focus,
+  a:hover {
+    color: #4169e1;
+  }
+  /* a:active {
+    color: #ffffff;
+    background-color: #dc143c;
+  } */
+  h1 {
+    color: #4169e1;
+    margin: 0px;
+    font-family: FrizQuadrata;
+  }
+  h2 {
+    color: #4169e1;
+    margin-bottom: 0;
+  }
+  h2 + p.f {
+    margin-top: 0;
+  }
+  p.tsr {
+    text-indent: 0;
+    font-size: xx-small;
+    text-align: right;
+    margin: 0;
+    float: right;
+  }
+  
+  .hr1 {
+    color: black;
+    background-color: black;
+    height: 3px;
+    margin-top: 0;
+    margin-bottom: 7px;
+    clear: both;
+  }
+  .hr2 {
+    /* color: #4169e1; */
+    background-color: var(--color-main-darker);
+    border: none;
+    height: 9px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  table.sp td {
+    vertical-align: bottom;
+  }
+  th {
+    text-align: left;
+    color: #4169e1;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  th,
+  td {
+    padding-right: 0.5em;
+    vertical-align: top;
+  }
+  tr.bk th,
+  p.ni b,
+  p.shm b,
+  b.bk {
+    color: black;
+  }
+  tr.cn td,
+  tr.cn th {
+    text-align: center;
+  }
+  p.f {
+    margin-top: 1em;
+    text-indent: 0;
+  }
+  p.ni {
+    text-indent: 0;
+  }
+  p {
+    margin: 0;
+    text-indent: 1em;
+  }
+  p.fi {
+    margin-top: 1em;
+  }
+  table.ip {
+    border: thin solid #4169e1;
+  }
+  caption {
+    font-weight: bold;
+    font-style: italic;
+    border: thin solid #4169e1;
+  }
+  b {
+    color: #4169e1;
+  }
+  q:before {
+    content: open-quote;
+  }
+  q:after {
+    content: close-quote;
+  }
+  q q:before {
+    content: open-quote;
+  }
+  q q:after {
+    content: close-quote;
+  }
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  p.src {
+    font-size: x-small;
+    text-align: right;
+  }
+  p.shm {
+    margin: 0 3em;
+  }
+  .c {
+    text-align: center;
+  }
+  i i {
+    font-style: normal;
+  }
+  /*
+  royalblue: 4169e1 == 65.105.225
+  crimson: dc143c == 220.20.60
+  */
+  
