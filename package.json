@@ -1,7 +1,7 @@
 {
   "name": "frontend_0.1",
   "version": "0.1.0",
-  "homepage": "https://adnd-compendium-frontend.github.io/react-gh-pages/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
