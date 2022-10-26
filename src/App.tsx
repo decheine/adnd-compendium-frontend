@@ -3,7 +3,7 @@
 import React, { Component, useState } from "react";
 // import { BrowserRouter as Router, Routes, Route, matchRoutes, useLocation } from 'react-router-dom';
 // Replacing BrowserRouter with HashRouter to allow for hosting on GitHub Pages
-import { HashRouter as Router, Routes, Route, matchRoutes, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, matchRoutes, useLocation, HashRouter } from 'react-router-dom';
 
 
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -57,7 +57,7 @@ function App() {
     <MonsterLink monster_key="aarakocr" /> */}
     
     {/* <MonsterPageLoader monster_key="aarakath"/> */}
-    <Router>
+    <HashRouter>
       <Navbar/>
       {/* <BreadCrumb title="Home"/> */}
       <ScrollToTop>
@@ -80,7 +80,7 @@ function App() {
 
       </Routes>
       </ScrollToTop>
-    </Router>
+    </HashRouter>
     </>
   );
 }

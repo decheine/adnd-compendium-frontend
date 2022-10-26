@@ -119,9 +119,7 @@ async function preLaunchOperation(){
   console.log("prelaunch global.monster_titles.size: " + global.monster_titles.size);
   root.render(
     <React.StrictMode>
-      <HashRouter>
         <App />
-      </HashRouter>
     </React.StrictMode>
   );
  });
