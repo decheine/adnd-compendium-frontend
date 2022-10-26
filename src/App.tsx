@@ -1,7 +1,10 @@
 
 // import useLocalStorage from 'use-local-storage'
 import React, { Component, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, matchRoutes, useLocation } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, matchRoutes, useLocation } from 'react-router-dom';
+// Replacing BrowserRouter with HashRouter to allow for hosting on GitHub Pages
+import { HashRouter as Router, Routes, Route, matchRoutes, useLocation } from 'react-router-dom';
+
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 
