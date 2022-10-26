@@ -56,6 +56,11 @@ This repository.
 
 Simple to deploy, once changes are made, GitHub pages is automatically built and served, no further action needed as long as it passes.
 
+### Continuous Deployment
+
+
+Key question to answer: If code that is deployed to GitHub pages causes errors in live production, how can I quickly rollback the deployment to a working version?
+
 ## Data Harvester
 
 
