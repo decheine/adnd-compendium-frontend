@@ -37,11 +37,12 @@
   },
   "scripts": {
     "copy": "copyfiles ./full_architecture.png ./public/images",
+    "build": "react-scripts build",
+    "add-domain": "echo \"completecompendium.com\" > build/CNAME",
+    "deploy": "npm run add-domain && gh-pages -d build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
