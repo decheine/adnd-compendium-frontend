@@ -5,7 +5,8 @@ import App from './App';
 import { DataService } from './services/DataService';
 
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';
+// import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -119,7 +120,11 @@ async function preLaunchOperation(){
   console.log("prelaunch global.monster_titles.size: " + global.monster_titles.size);
   root.render(
     <React.StrictMode>
+      {/* <HashRouter> */}
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
+      </BrowserRouter>
+      {/* </HashRouter> */}
     </React.StrictMode>
   );
  });
