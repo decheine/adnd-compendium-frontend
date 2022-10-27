@@ -59,7 +59,14 @@ Simple to deploy, once changes are made, GitHub pages is automatically built and
 ### Continuous Deployment
 
 
-Key question to answer: If code that is deployed to GitHub pages causes errors in live production, how can I quickly rollback the deployment to a working version?
+> Key question to answer: If code that is deployed to GitHub pages causes errors in live production, how can I quickly rollback the deployment to a working version?
+
+To deploy, run the command
+
+`npm run deploy`
+
+And github pages will be built. After this, make sure to set the url in the GitHub pages setting back to `completecompendium.com`.
+
 
 ## Data Harvester
 
