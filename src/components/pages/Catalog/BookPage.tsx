@@ -1,39 +1,32 @@
 // Page that has all the books for a given setting
 
 
-import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom"; 
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; 
 import Layout from "../../Layout";
 
-import { BookList } from "./BookList"; 
-
 import MonsterList from "../../MonsterList";
-
-import { DataService } from "../../../services/DataService";
 
 import './BookPage.css'
 
 import { GLOBALS } from '../../../data/GLOBALS';
 
-const ACRONYMS = require('../../../data/CatAcronyms.json')
-
 // import GLOBALS
 
 // Input Structure
-interface BookProps {
-    book_title: string,
-    monster_keys: Object
-}
+// interface BookProps {
+//     book_title: string,
+//     monster_keys: Object
+// }
 
-interface BookLoaderProps {
-    publish_id: string
-}
+// interface BookLoaderProps {
+//     publish_id: string
+// }
 
 // Need to call API to get settings
 
 const BookPageLoader = () => {
     const {category, publish_id} = useParams();
-    const [bookData, setBookData] = useState([])
     const [monster_keys, setMonsters] = useState([])
     const [book_title, setTitle] = useState([])
     const [author, setAuthor] = useState([])
@@ -59,7 +52,7 @@ const BookPageLoader = () => {
   
     useEffect(() => {
       fetchData()
-    }, [])
+    })
 
     let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
 
@@ -79,6 +72,7 @@ const BookPageLoader = () => {
                 <div className="card-1">
                     <div className="col-1">
                         <img src={'/images/Books/Hi Resolution/' +  publish_id + '.jpg'} className="card-img"
+                        alt="Book Cover (alt text coming soon)"
                         onError={({currentTarget}) => {
                             currentTarget.onerror = null;
                             currentTarget.alt = "This monster is missing it's image. It will be found eventually.";
@@ -114,36 +108,6 @@ const BookPageLoader = () => {
         </>
     )
   }
-
-
-function BookPage() {
-    let { category, publish_id } = useParams();
-    // const the_category = props.category;
-    if(publish_id === undefined || category === undefined){
-        return (
-            <>
-            </>
-        )
-    } else {
-        console.log("book publish_id: ", publish_id)
-        return (
-            <>
-                <Layout>
-
-                    <div className="setting-logo">
-                        <img className="headerimg" src={'/images/grf/' +  category + '.gif'} alt={category + 'category image'}></img>
-
-                    </div>
-                    
-                    <div className="categoryBody"></div>
-                    {/* <BookPage book_title={publish_id}/> */}
-                </Layout>
-            </>
-        )
-        
-    }
-}
-
 
 
 export default BookPageLoader;

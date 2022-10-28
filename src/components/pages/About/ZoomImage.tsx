@@ -1,5 +1,5 @@
 // React component that displays an image and if the user clicks on it, it will zoom in on the image
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './ZoomImage.css';
 

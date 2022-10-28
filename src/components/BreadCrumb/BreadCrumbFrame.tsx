@@ -4,15 +4,13 @@
  */
 
 // Breadcrum react component that displays the current page's breadcrumb showing Catalog > Setting > Book
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
 import './BreadCrumbFrame.css'
 // import { title } from 'process';
 const Acronyms = require('../../data/AcronymsSetting.json')
-
 
 // class BreadCrumbElement extends React.Component {
 
@@ -66,11 +64,11 @@ class BreadCrumb extends React.Component<MyProps> {
         // console.log("setting: " + this.props.setting)
         // console.log("monster_key: " + this.props.monster_key)
         
-        if(this.props.title == "Home"){
+        if(this.props.title === "Home"){
             return (
                 <></>
             )
-        } else if (this.props.title == "catalog") {
+        } else if (this.props.title === "catalog") {
             // console.log("Book id: ", this.props.book)
             // console.log("Books: ", global.book_titles)
             // console.log("Book title: ", global.book_titles.get(this.props.book!))
@@ -116,7 +114,7 @@ class BreadCrumb extends React.Component<MyProps> {
                 </>
             )
         } 
-        else if (this.props.title == "appendix") {
+        else if (this.props.title === "appendix") {
             // this.props.book ? console.log("Titles", Titles[this.props.setting])
             var setting_text = ""
             setting_text = global.monster_titles.get(this.props.setting!)!

@@ -6,7 +6,7 @@ const BOOKS = require('../../../data/sortedtsr.json')
 const Categories = require('../../../data/Categories.json')
 const CatAcronyms = require('../../../data/CatAcronyms.json')
 
-export function AllBooksList(props: any) {
+export function AllBooksList() {
 
     const items = []
     // console.log(BOOKS)
@@ -20,7 +20,7 @@ export function AllBooksList(props: any) {
     }
 
     for (const [index, value] of Object.entries(BOOKS)){
-        // console.log(index, books_setting[index])
+        console.log(index, value)
         items.push(<BookCard key={index} id={index} category={books_setting[index]} title={BOOKS[index as string]}/> )
     }
     

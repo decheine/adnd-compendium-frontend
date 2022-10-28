@@ -1,9 +1,7 @@
 // Random monster button.
 
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-// import { DataService } from '../../services/DataService';
-import { GLOBALS } from '../data/GLOBALS';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './RandomMonsterButton.css';
 
@@ -13,7 +11,7 @@ function getRandomInt(max: number) {
 
 const RandomMonsterButton = () => {
     const [monster_key, setMonsterKey] = useState('');
-    const [monster_title, setMonsterTitle] = useState('');
+    // const [monster_title, setMonsterTitle] = useState('');
 
     const getRandomMonster = () => {
         // if DataService.monsterTitles is undefined

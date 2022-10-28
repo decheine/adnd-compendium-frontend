@@ -1,32 +1,29 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import {useEffect, useState} from 'react'
 import { Interweave } from 'interweave';
 
 import "./MonsterPage.css"
 import { Link, useParams } from 'react-router-dom';
 import Layout from './Layout';
-import MonsterBodyBlocks from './MonsterBlockBuilder';
 import RandomMonsterButton from './RandomMonsterButton';
 // import DataService
 import { DataService } from '../services/DataService'
-import { JsxElement } from 'typescript';
 
 
 const sortedtsr = require('../data/sortedtsr.json')
 const cat_acronyms = require('../data/CatAcronyms.json')
 
-interface IMonsterPage {
-    monster_key: number;
-    monster_data: any;
-    getMonsterData: Function;
-}
+// interface IMonsterPage {
+//     monster_key: number;
+//     monster_data: any;
+//     getMonsterData: Function;
+// }
 
 // function to fix the links within monster pages
 // Adds a hash to the href's of the pattern that appears
 // in the input string
 
 function HashMonsterData(data: string){
-    const reg = RegExp('href="\/', 'g');
+    const reg = RegExp('href="/', 'g');
     const monster_data_hashed = data.replace(reg, 'href="/#/');
     return monster_data_hashed;
 }
@@ -74,7 +71,6 @@ function SlimMonsterPage({data}: any) {
     //  and also have an onerror="javascript:this.src='images/default.jpg'" to set the image to default if it doesn't exist
     //  If doesn't need image, set the bool flag and no image will be rendered
     let monster_image = null;
-    let has_image = true;
     let needs_image = true;
     let image_url = "";
     // if(data[0].monster_data.images[1]) regex contains monster_key
@@ -177,7 +173,7 @@ function SlimMonsterPage({data}: any) {
                 Last Modified: {data[0].updatedAt}
             </div>
             {/* TSR LOGO */}
-            <img className="tsr-footer" src="/img_settings/tsr_sm.png" />
+            <img className="tsr-footer" src="/img_settings/tsr_sm.png" alt="TSR Logo" />
             
             
             {/* NAV BAR */}
@@ -199,7 +195,7 @@ function SlimMonsterPage({data}: any) {
 }
 
 const getMonsterData = async (monster_key: any) => {
-    const apiurl = "http://127.0.0.1:8080" + "/api/appendix/" + monster_key;
+    const apiurl = "http://127.0.0.1:8080/api/appendix/" + monster_key;
   
     return fetch(apiurl, {
       method: 'GET',
@@ -281,60 +277,6 @@ function MockMonsterPageLoader(props: MockMonsterPageLoaderProps) {
 }
 
 
-// class MonsterPageLoader extends React.Component {
-//     constructor(props: any) {
-//         super(props);
-//         this.state = {
-//             data: null,
-//             loading: true,
-//             error: null
-//         }
-//     }
-//     componentDidMount() {
-//         getMonsterData(this.props.monster_key)
-//         .then(response => response.json())
-//         .then(json => {
-//             this.setState({
-//                 data: json,
-//                 loading: false
-//             });
-//         }).catch(error => {
-//             this.setState({
-//                 error: error,
-//                 loading: false
-//             });
-//         }
-//         );
-//     }
-//     render() {
-//         if (this.state.loading) {
-//             return <div>Loading....</div>;
-//         }
-//         if (this.state.error) {
-//             return <div>Error: {this.state.error}</div>;
-//         }
-//         return <MonsterPage data={this.state.data}/>;
-//     }
-// }
 
-
-// const MonsterPageLoader = (monster_key: any) => {
-//     const [data, setData] = React.useState([])
-//     console.log("MonsterPageLoader monster_key: " + monster_key)
-//     useEffect(() => {
-//       axios
-//         .get("http://127.0.0.1:8080" + "/api/appendix/" + monster_key)
-//         .then((res) => {
-//           setData(res.data)
-//         })
-//     },
-//     [monster_key]
-//     )
-  
-//     return (
-//     //   (!data) ? <>Loading...</> : <MonsterPage data={data} />
-//       <MonsterPage data={data} />
-//     )
-//   }
 
 export {MonsterPageLoader, MockMonsterPageLoader};

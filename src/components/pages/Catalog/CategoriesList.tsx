@@ -16,7 +16,7 @@ const WORLDS = require('../../../data/CatWorlds.json')
 
 export function CategoriesList(){
     // create a map from setting to book list from the global.settings
-    let settings = new Array<string>;
+    let settings = new Array<string>();
     for(let i = 0; i < global.settings.length; i++){
          settings.push(global.settings[i].setting_name);
     }

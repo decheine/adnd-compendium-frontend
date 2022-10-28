@@ -57,7 +57,7 @@ const useIntersectionObserver = (setActiveId: React.Dispatch<React.SetStateActio
 
     
     return () => observer.disconnect();
-  }, []);
+  }, [setActiveId]);
 };
 
 
@@ -138,10 +138,10 @@ const getNestedHeadings = (headingElements: Element[]) => {
   return nestedHeadings;
 };
 
-interface StateProperties {
-  nestedHeadings: { id: any; title: any; items: Array<any>; }[];
-  // age: number;
-}
+// interface StateProperties {
+//   nestedHeadings: { id: any; title: any; items: Array<any>; }[];
+//   // age: number;
+// }
 
 
 const useHeadingsData = () => {

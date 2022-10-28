@@ -13,41 +13,32 @@ library.add(fas, faBars)
 
 // Reimpliment NavBar as React component
 
-class NavBar extends React.Component {
-    render() {
-        return (
-            <Navbar />
-        )
-    }
-}
 
 // Sidebarprops type
-type SidebarProps = {
-    sidebarOpen: boolean,
-    closeSidebar: () => void
-}
+// type SidebarProps = {
+//     sidebarOpen: boolean,
+//     closeSidebar: () => void
+// }
 
-// Boolean class that renders depending on true or false
-class BooleanDisplay extends React.Component<SidebarProps> {
+// // Boolean class that renders depending on true or false
+// class BooleanDisplay extends React.Component<SidebarProps> {
 
-    constructor(props: SidebarProps) {
-        super(props);
-        // Don't call this.setState() here!
-        // this.state = { sidebarOpen: 0 };
-        // this.handleClick = this.handleClick.bind(this);
+//     // constructor(props: SidebarProps) {
+//     //     super(props);
+//     //     // Don't call this.setState() here!
+//     //     // this.state = { sidebarOpen: 0 };
+//     //     // this.handleClick = this.handleClick.bind(this);
+//     // }
 
-
-    }
-
-    render() {
-      console.log(this.props.sidebarOpen)
-        return (
-            <div>
-                {this.props.sidebarOpen ? "Open" : "Closed"}
-            </div>
-        )
-    }
-}
+//     render() {
+//       console.log(this.props.sidebarOpen)
+//         return (
+//             <div>
+//                 {this.props.sidebarOpen ? "Open" : "Closed"}
+//             </div>
+//         )
+//     }
+// }
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -57,9 +48,9 @@ function Navbar() {
       {id: "hamberger-input", checked: 0}
     ]
 
-    const [checkedList, setCheckedList] = React.useState(
-      check.map(x => !!x.checked)
-    );
+    // const [checkedList, setCheckedList] = React.useState(
+    //   check.map(x => !!x.checked)
+    // );
 
     //  const overlay_checkbox = (
     //   <>

@@ -1,21 +1,10 @@
-import React from 'react';
-
 import Layout from "../../Layout";
-import { Interweave } from 'interweave';
-import { AppService } from '../../../services/app.service';
 import ZoomImage from './ZoomImage';
-import SearchComponent from '../Search/Search';
 import TableOfContents from './TableOfContents';
 
 import './About.css';
 
-const CatAcronyms = require('../../../data/CatAcronyms.json');
-
-
-
 export function About() {
-
-
 
     document.title = "Complete Compendium - About"
     return (

@@ -1,8 +1,4 @@
-import React from 'react'
-import { FixedSizeList as List } from "react-window";
-import InfiniteLoader from "react-window-infinite-loader";
-import BreadCrumb from '../../BreadCrumb/BreadCrumbFrame';
-import KEYS_TITLES from '../../../data/AA_KEYS_TITLES.json'
+
 
 // import './css/Catalog.css'
 import Layout from '../../Layout';
@@ -35,11 +31,6 @@ const MonsterLinks = (props: MonsterLinksProps) => {
         </>
     )
 }
-
-const LOADING = 1;
-const LOADED = 2;
-let itemStatusMap = {};
-
 
 interface MonsterLinkProps {
     monster_key: string;

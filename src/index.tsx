@@ -37,7 +37,7 @@ async function preLaunchOperation(){
   global.monster_titles = new Map<string, string>();
   global.book_titles = new Map<string, string>();
   // console.log("global.monster_titles.size: " + global.monster_titles.size);
-  if(global.monster_titles.size == 0){
+  if(global.monster_titles.size === 0){
     // console.log("Loading monster titles");
     await DataService.getMonsterTitles().then((data): any => {
       // console.log("getMonsterTitles", data);
@@ -49,7 +49,7 @@ async function preLaunchOperation(){
     // console.log("Already loaded monster titles");
   }
 
-  if(global.book_titles.size == 0){
+  if(global.book_titles.size === 0){
     // console.log("Loading book titles");
     await DataService.getBookTitles().then((data): any => {
       // for loop iterating over item in data
