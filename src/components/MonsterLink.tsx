@@ -16,10 +16,6 @@ const MonsterLink = (props: MonsterLinkProps | MonsterLinkKeyProps) => {
     // console.log("global.monster_titles.size: " + global.monster_titles.size);
     return (
         <div className="Button">
-            <a href={"/appendix/" + props.monster_key}>
-                {/* {global.monster_titles.get(props.monster_key)}    */}
-                {'monster_title' in props ? props.monster_title : global.monster_titles.get(props.monster_key)}   
-            </a>
         </div>
     )
 }

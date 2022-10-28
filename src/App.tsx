@@ -51,7 +51,6 @@ function App() {
 
   // Load the catalog
 
-
   return (
     <>
     {/* <MonsterLink monster_key="aarakath" />

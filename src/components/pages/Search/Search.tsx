@@ -58,7 +58,7 @@ function Search(props: SearchProps) {
                 Array.isArray(searchResults) &&
                 searchResults.map((item: any) => (
                     <li key={item.id}>
-                        <a href={item.html_url}>{item.name}</a>
+                        <Link to={item.html_url}>{item.name}</Link>
                     </li>
                 ))}
             </ul>

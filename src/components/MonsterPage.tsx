@@ -135,9 +135,9 @@ function SlimMonsterPage({data}: any) {
             {/* TITLE */}
             <div className="top-header">
                 <h1>{data[0].monster_data.title}</h1>
-                <a href={"/catalog/" + cat_acronyms[data[0].monster_data.setting]} className="sourcebook-link">
+                <Link to={"/catalog/" + cat_acronyms[data[0].monster_data.setting]} className="sourcebook-link">
                     <img className="setting-image" src={`/img_settings/${cat_acronyms[data[0].monster_data.setting]}.gif`}  alt={data[0].monster_data.setting + "Campaign Setting Logo"} title={data[0].monster_data.setting}/>
-                </a>
+                </Link>
             </div>
             
             <hr className ="hr1"/>

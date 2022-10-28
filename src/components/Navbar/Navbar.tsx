@@ -115,9 +115,6 @@ function Navbar() {
                             <Link to='/' className='nav-links'>
                                 Home
                             </Link>
-                            {/* <a href='/' className='nav-links' onClick={handleClick}>
-                                Home
-                            </a> */}
                         </label>
                         <li className='nav-item'>
                             <Link to='/appendix' className='nav-links' onClick={handleClick}>
