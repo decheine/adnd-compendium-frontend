@@ -12,7 +12,6 @@ function HeroSection() {
 
       {/* Random Monster Button */}
       <div className="random_monster_button">
-        {/* <a href="/monsters/Random Monster" className="random_monster_button_link">Random Monster</a> */}
         <RandomMonsterButton />
       </div>
       

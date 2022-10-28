@@ -10,6 +10,7 @@ import Layout from '../../Layout';
 
 // import AppendixPage.css
 import './AppendixPage.css';
+import { Link } from 'react-router-dom';
 
 type MonsterLinksProps = {
     monster_keys: Map<string, string>,
@@ -48,7 +49,7 @@ interface MonsterLinkProps {
 // monster link. Link to each monster_key
 const MonsterLink = ( {monster_key, title }: MonsterLinkProps) => {
     return (
-        <a className="monster-link" href={`/appendix/${monster_key}`}>{title}</a>
+        <Link className="monster-link" to={`/appendix/${monster_key}`}>{title}</Link>
     )
 }
 
@@ -64,8 +65,6 @@ export function Appendix() {
         <div className='background-appendix'>
 
         {/* <CategoriesList/> */}
-        {/* <a href="/appendix/aarakocr">Aarakocra</a> */}
-
         <div className="AppendixDescription">Browse monster source books by setting or browse all at once.</div>
 
         <MonsterLinks monster_keys={global.monster_titles}/>

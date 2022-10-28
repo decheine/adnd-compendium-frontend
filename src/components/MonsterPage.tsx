@@ -26,18 +26,8 @@ interface IMonsterPage {
 // in the input string
 
 function HashMonsterData(data: string){
-    // console.log("data: ", data);
-    const monster_data = data;
-    const regex = '/href="\//g';
     const reg = RegExp('href="\/', 'g');
-
-    const test_string = 'some text <a href="/appendix/weasel">giant weasel</a>';
-    const test_hashed = test_string.replace(reg, 'href="/#/');
-    console.log("test_hashed: ", test_hashed);
-    // console.log("monster_data: ", monster_data);
     const monster_data_hashed = data.replace(reg, 'href="/#/');
-    
-    // console.log("monster_data_hashed: ", monster_data_hashed);
     return monster_data_hashed;
 }
 

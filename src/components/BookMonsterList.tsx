@@ -27,19 +27,6 @@ function BookMonsterList({data}: any) {
             <div className="wrapper">
             <div className="BookMonsterList">
             {
-                // data[0]["monster_keys"].forEach((monster_key: string) => {
-                //     console.log(global.monster_titles.get(monster_key))
-                //     return (
-                //         // <li>
-                //         //     <a href={"/appendix/" + monster_key}>
-                //         //          Link: {global.monster_titles.get(monster_key)}
-                //         //     </a>
-                //         // </li>
-                //         <MonsterLink monster_key={monster_key} />
-                //     )
-                // });
-
-                
                     data[0]["monster_keys"].sort(function(a: string, b:string){
                         var nameA = a.toLowerCase(), nameB = b.toLowerCase();
                         if (nameA < nameB) //sort string ascending
