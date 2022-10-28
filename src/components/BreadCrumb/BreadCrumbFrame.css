@@ -36,12 +36,11 @@
 
 .bc-element {
     /* text-align: left; */
-    font-family: 'Leksa Sans', sans-serif;
+    font-family: 'Leksa Sans Bold', sans-serif;
     font-size: 14pt;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-weight: 700;
     line-height: 48px;
     text-align: left;
     

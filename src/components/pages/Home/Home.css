@@ -90,9 +90,9 @@
   
   @font-face {
     font-family: "frizquadrata_ltbold";
-    src: url("https://decheine.github.io/lomion-de/site/fonts/friz_quadrata_lt_bold-webfont.woff2")
+    src: url("./friz_quadrata_lt_bold-webfont.woff2")
         format("woff2"),
-      url("https://decheine.github.io/lomion-de/site/fonts/friz_quadrata_lt_bold-webfont.woff")
+      url("./friz_quadrata_lt_bold-webfont.woff")
         format("woff");
     font-weight: normal;
     font-style: normal;
@@ -106,6 +106,21 @@
   @font-face {
     font-family: "Helvetica CE 55 Roman";
     src: url("./Helvetica\ Neue\ CE\ 55\ Roman.ttf")
+  }
+
+  @font-face {
+    font-family: "Leksa Sans";
+    src: url("./LeksaSans.otf")
+  }
+
+  @font-face {
+    font-family: "Leksa Sans Bold";
+    src: url("./LeksaSans-Bold.otf")
+  }
+
+  @font-face {
+    font-family: "Leksa Sans DemiBold";
+    src: url("./LeksaSans-DemiBold.otf")
   }
   
   /* Mobile view  */

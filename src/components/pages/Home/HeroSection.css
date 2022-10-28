@@ -94,6 +94,7 @@
     border-radius: 8px;
     /* width: 200px; */
     height: max-content;
+    max-width: 70vw;
     margin-top: 2rem;
     margin-bottom: 10rem;
     display: flex;
@@ -116,10 +117,10 @@
 
     /* Monstrous Title 3 */
     position: relative;
-    font-family: "Leksa Sans";
+    font-family: "Leksa Sans DemiBold";
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 24px;
     /* line-height: 104px; */
     display: flex;
     align-items: center;
@@ -128,10 +129,12 @@
     text-transform: capitalize;
     /* color: #1250A2; */
     color: white;
+    
 
-    padding: 1rem;
-    /* padding-left: 2rem; */
-    /* padding-right: 2rem; */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   
