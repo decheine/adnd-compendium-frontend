@@ -5,8 +5,8 @@ import App from './App';
 import { DataService } from './services/DataService';
 
 import reportWebVitals from './reportWebVitals';
-// import { HashRouter } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -116,15 +116,19 @@ async function preLaunchOperation(){
 // Prelaunch operations
 
  preLaunchOperation().then(() => {
+  // const hp_url = "https://completecompendium.com/";
+  const hp_url = "/";
+
   console.log("preLaunchOperation complete");
   console.log("prelaunch global.monster_titles.size: " + global.monster_titles.size);
+  console.log("public_url", hp_url);
   root.render(
     <React.StrictMode>
-      {/* <HashRouter> */}
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={hp_url}>
+      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
         <App />
-      </BrowserRouter>
-      {/* </HashRouter> */}
+      {/* </BrowserRouter> */}
+      </HashRouter>
     </React.StrictMode>
   );
  });

@@ -21,6 +21,26 @@ interface IMonsterPage {
     getMonsterData: Function;
 }
 
+// function to fix the links within monster pages
+// Adds a hash to the href's of the pattern that appears
+// in the input string
+
+function HashMonsterData(data: string){
+    // console.log("data: ", data);
+    const monster_data = data;
+    const regex = '/href="\//g';
+    const reg = RegExp('href="\/', 'g');
+
+    const test_string = 'some text <a href="/appendix/weasel">giant weasel</a>';
+    const test_hashed = test_string.replace(reg, 'href="/#/');
+    console.log("test_hashed: ", test_hashed);
+    // console.log("monster_data: ", monster_data);
+    const monster_data_hashed = data.replace(reg, 'href="/#/');
+    
+    // console.log("monster_data_hashed: ", monster_data_hashed);
+    return monster_data_hashed;
+}
+
 
 // function MonsterPage({monster_key, monster_data, getMonsterData}: IMonsterPage) {
 function SlimMonsterPage({data}: any) {
@@ -39,6 +59,7 @@ function SlimMonsterPage({data}: any) {
     let next_monster_key = "";
     // console.log("global.monster_titles", global.monster_titles)
     // console.log("global.monster_titles.keys", global.monster_titles.keys() )
+    // TODO: This stuff does not need to be in here I don't think.
     const monster_keys = Array.from(global.monster_titles.keys()) ;  
     // console.log("monster_keys", monster_keys)
     const index = monster_keys.indexOf(data[0].monster_key.toString());
@@ -90,27 +111,19 @@ function SlimMonsterPage({data}: any) {
             currentTarget.src = image_placeholder;
             currentTarget.title = "Missing image of " + data[0].monster_data.title;
         }}/>
-        
 
-        //     } else {
-        //         //placeholder image
-        //         monster_image = <img src="https://via.placeholder.com/300x360" alt="Placeholder image. Image not yet in database" className="monster-image" />
-        //     }
-        // });
     } 
     
     // Change document title to monster title
     document.title = data[0].monster_data.title + " - Complete Compendium";
-    
-    // if(data[0].monster_data.hasOwnProperty("image")){
-    //     image = data[0].monster_data.images[1];
-    // } else {
-    //     image = "https://via.placeholder.com/300x360";
-    // }
-    
-    // console.log("data: ", data[0].monster_data)
-    // console.log("Monster setting origin: ", data[0].monster_data.setting, cat_acronyms[data[0].monster_data.setting])
 
+    console.log("Type of data[0].monster_data.fullBody", 
+    typeof(data[0].monster_data.fullBody)
+    )
+
+    const fullBody = data[0].monster_data.fullBody;
+    const fullBodyHashed = HashMonsterData(fullBody);
+    
     return (
         <div className="monster-page">
             {/* Sourcebook Image */}
@@ -145,7 +158,7 @@ function SlimMonsterPage({data}: any) {
             </div>
             
             {/* Render with Interweave */}
-            <Interweave className="interweave" content={data[0].monster_data.fullBody} />
+            <Interweave className="interweave" content={fullBodyHashed} />
             
             {/* TSR Array */}
             <div className="source-list">
@@ -158,7 +171,7 @@ function SlimMonsterPage({data}: any) {
                             data[0].monster_data["TSR"].map((tsr: string) => {
                                 return (
                                     <div key={tsr}>
-                                        <a href={"/catalog/" + cat_acronyms[data[0].monster_data.setting] + "/" + tsr}>{sortedtsr[tsr]} ({tsr})</a>
+                                        <Link to={"/catalog/" + cat_acronyms[data[0].monster_data.setting] + "/" + tsr}>{sortedtsr[tsr]} ({tsr})</Link>
                                         <br/>
                                     </div>
                                 )
