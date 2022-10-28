@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.f44b5a41.css",
+    "main.css": "/static/css/main.e3c2d7e4.css",
     "main.js": "/static/js/main.9425c067.js",
     "static/js/787.ed1277f6.chunk.js": "/static/js/787.ed1277f6.chunk.js",
     "static/media/paper.jpg": "/static/media/paper.a85843d9ef4efcee9c38.jpg",
@@ -9,15 +9,17 @@
     "static/media/LeksaSans.otf": "/static/media/LeksaSans.5f5828bad4e050105111.otf",
     "static/media/LeksaSans-DemiBold.otf": "/static/media/LeksaSans-DemiBold.f1d1206cf43ec4f20308.otf",
     "static/media/friz_quadrata_lt_bold-webfont.woff": "/static/media/friz_quadrata_lt_bold-webfont.cd601eacc519cf1c290f.woff",
+    "static/media/frizquadrata-webfont.woff": "/static/media/frizquadrata-webfont.bd00589e30dc3f7b69d4.woff",
     "static/media/friz_quadrata_lt_bold-webfont.woff2": "/static/media/friz_quadrata_lt_bold-webfont.db46a57d31788168c8ea.woff2",
+    "static/media/frizquadrata-webfont.woff2": "/static/media/frizquadrata-webfont.158399c01cf21eee43b5.woff2",
     "static/media/HelveticaNeue-Medium.otf": "/static/media/HelveticaNeue-Medium.d098854788a0f5fab91c.otf",
     "index.html": "/index.html",
-    "main.f44b5a41.css.map": "/static/css/main.f44b5a41.css.map",
+    "main.e3c2d7e4.css.map": "/static/css/main.e3c2d7e4.css.map",
     "main.9425c067.js.map": "/static/js/main.9425c067.js.map",
     "787.ed1277f6.chunk.js.map": "/static/js/787.ed1277f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f44b5a41.css",
+    "static/css/main.e3c2d7e4.css",
     "static/js/main.9425c067.js"
   ]
 }
