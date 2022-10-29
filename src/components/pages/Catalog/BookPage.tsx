@@ -52,7 +52,7 @@ const BookPageLoader = () => {
   
     useEffect(() => {
       fetchData()
-    })
+    }, [])
 
     let image_placeholder = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
 
