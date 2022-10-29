@@ -16,7 +16,7 @@ const MonsterLinks = (props: MonsterLinksProps) => {
 
     // let arr = Array.from(props.monster_keys.keys())
     // console.log(arr)
-    const monster_keys = Array.from(props.monster_keys.keys())
+    const monster_keys = Array.from(props.monster_keys.keys()).sort((a, b) => a.localeCompare(b))
     const monster_links = monster_keys.map(monster_key => {
         return (
                 <MonsterLink key={monster_key} monster_key={monster_key} title={props.monster_keys.get(monster_key) ? props.monster_keys.get(monster_key)! : ""} />
