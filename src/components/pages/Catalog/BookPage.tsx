@@ -25,6 +25,7 @@ import { GLOBALS } from '../../../data/GLOBALS';
 
 // Need to call API to get settings
 
+
 const BookPageLoader = () => {
     const {category, publish_id} = useParams();
     const [monster_keys, setMonsters] = useState([])
@@ -48,7 +49,7 @@ const BookPageLoader = () => {
         })
     }
     
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   
     useEffect(() => {
       fetchData()
