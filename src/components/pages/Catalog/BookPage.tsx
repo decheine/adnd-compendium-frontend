@@ -33,6 +33,7 @@ const BookPageLoader = () => {
     const [author, setAuthor] = useState([])
     const [year, setYear] = useState([])
   
+    
     const fetchData = () => {
       fetch(GLOBALS.API_ENDPOINT + "/api/catalog/" + publish_id)
         .then(response => {
