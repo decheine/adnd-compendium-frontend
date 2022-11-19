@@ -20,11 +20,11 @@ function MonsterList(props: MonsterListProps) {
             monster_keys.sort().map((monster_key: string) => {
                 // console.log("monster_key: ", monster_key)
                 return (
-                    <div className="list-entry" key={monster_key}>
-                        <Link to={url_suffix + monster_key} className="list-link">
+                        <Link to={url_suffix + monster_key} className="list-link" key={monster_key}>
+                        <div className="list-entry" >
                             {global.monster_titles.get(monster_key)}
+                        </div>
                         </Link>
-                    </div>
                 )
             }
             )

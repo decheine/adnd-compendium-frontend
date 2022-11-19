@@ -21,51 +21,6 @@ type SearchProps = {
     searchTerm: string,
 }
 
-// Search function that calls the search api
-function Search(props: SearchProps) {
-    const [search, setSearch] = useState(props.searchTerm);
-    const [searchResults, setSearchResults] = useState([]);
-
-    const handleChange = (event: any) => {
-        setSearch(event.target.value);
-        console.log("searchresults len", searchResults.length)
-    }
-
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        console.log(search);
-        fetch(`${GLOBALS.API_ENDPOINT}/api/search/title/${search}`)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setSearchResults(data.items);
-            });
-        
-    }
-
-    return (
-        <div className="Search">
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Search:
-                    <input type="text" value={search} onChange={handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-            <ul>
-                {
-                // if searchResults is an Array
-                Array.isArray(searchResults) &&
-                searchResults.map((item: any) => (
-                    <li key={item.id}>
-                        <Link to={item.html_url}>{item.name}</Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
-
 // stateprops
 type StateProps = {
     searchTerm: string,
@@ -81,7 +36,6 @@ class SearchComponent extends React.Component<{}, StateProps> {
             searchResults: []
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleResult = this.handleResult.bind(this);
     }
 
@@ -99,24 +53,7 @@ class SearchComponent extends React.Component<{}, StateProps> {
         // console.log("searchresults len", this.state.searchResults)
 
         event.preventDefault();
-        if(event.target.value.length < 1){
-            console.log("search term too short");
-            return;
-        }
-        console.log("submitting", event.target.value);
-        // Call the search api
-        fetch(`${GLOBALS.API_ENDPOINT}/api/search/title/${event.target.value}`)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                this.setState({ searchResults: data});
-            });
-        console.log("searchresults len", this.state.searchResults.length)
-    }
-
-    handleSubmit(event: any) {
-        event.preventDefault();
-        if(event.target.value.length < 1){
+        if(event.target.value.length < 3){
             console.log("search term too short");
             return;
         }
@@ -133,7 +70,7 @@ class SearchComponent extends React.Component<{}, StateProps> {
 
     Submit = (e: any) =>{
         e.preventDefault();
-        if(e.target.searchfield.value < 1){
+        if(e.target.searchfield.value < 3){
             console.log("search term too short");
             return;
         }
