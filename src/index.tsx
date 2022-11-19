@@ -123,13 +123,13 @@ async function preLaunchOperation(){
   console.log("prelaunch global.monster_titles.size: " + global.monster_titles.size);
   console.log("public_url", hp_url);
   root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
       <HashRouter basename={hp_url}>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
         <App />
       {/* </BrowserRouter> */}
       </HashRouter>
-    </React.StrictMode>
+    // </React.StrictMode>
   );
  });
 // If you want to start measuring performance in your app, pass a function

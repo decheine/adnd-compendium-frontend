@@ -43,7 +43,7 @@
     "copy": "copyfiles ./full_architecture.png ./public/images",
     "build": "react-scripts build",
     "add-domain": "echo \"completecompendium.com/#\" > build/CNAME",
-    "predeploy": "npm run add-domain && npm run build",
+    "predeploy": "npm run copy && npm run add-domain && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "test": "react-scripts test",
