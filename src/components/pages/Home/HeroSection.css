@@ -16,7 +16,7 @@
       #ffffff 64.76%,
       rgba(245, 238, 219, 1) 100%
     ); */
-    background-image: url(../../../../public/images/paper.jpg);
+    background-image: url(../../../../public/images/paper.webp);
     background-size: cover;
     height: 100%;
     width: 100%;
