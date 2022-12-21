@@ -96,6 +96,7 @@
         format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -106,31 +107,37 @@
         format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
     font-family: "HelveticaNeue";
     src: url("./HelveticaNeue-Medium.otf");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Helvetica CE 55 Roman";
-    src: url("./Helvetica\ Neue\ CE\ 55\ Roman.ttf")
+    src: url("./Helvetica\ Neue\ CE\ 55\ Roman.ttf");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Leksa Sans";
-    src: url("./LeksaSans.otf")
+    src: url("./LeksaSans.otf");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Leksa Sans Bold";
-    src: url("./LeksaSans-Bold.otf")
+    src: url("./LeksaSans-Bold.otf");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Leksa Sans DemiBold";
-    src: url("./LeksaSans-DemiBold.otf")
+    src: url("./LeksaSans-DemiBold.otf");
+    font-display: swap;
   }
   
   /* Mobile view  */
