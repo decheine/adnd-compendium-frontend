@@ -12,8 +12,6 @@ type MonsterLinkKeyProps = {
 
 
 const MonsterLink = (props: MonsterLinkProps | MonsterLinkKeyProps) => {
-    // console.log("title: " + global.monster_titles.get('aarakath'));
-    // console.log("global.monster_titles.size: " + global.monster_titles.size);
     return (
         <div className="Button">
         </div>
