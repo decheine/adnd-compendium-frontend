@@ -142,7 +142,7 @@ div .bottom-banner{
     font-family: 'Helvetica CE 55 Roman';
     font-weight: bold;
     font-size: 18px;
-    line-height: 155%;
+    line-height: 48px; /* mobile friendly tappable height*/
     letter-spacing: 1px;
 }
 
