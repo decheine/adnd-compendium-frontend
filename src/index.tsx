@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { DataService } from './services/DataService';
+import { DataService, DataProvider } from './services/DataService';
 
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
@@ -19,6 +19,7 @@ type SettingType = {
 }
 
 declare global {
+  var data_provider: DataProvider;
   var monster_titles: Map<string, string>;
   var book_titles: Map<string, string>;
   var monster_keys: Array<string>;
@@ -30,36 +31,25 @@ declare global {
 
 }
 
+global.data_provider = new DataProvider();
+
 // const dataService = new DataService();
 
-
+// Instead of fetching the data during preLaunch, just set up the global structures that will
+// hold the data. Only should fetch data when it absolutely needs to.
+// what if api is down? user would probably refresh
 async function preLaunchOperation(){
-  global.monster_titles = new Map<string, string>();
-  global.book_titles = new Map<string, string>();
-  // console.log("global.monster_titles.size: " + global.monster_titles.size);
-  if(global.monster_titles.size === 0){
-    // console.log("Loading monster titles");
-    await DataService.getMonsterTitles().then((data): any => {
-      // console.log("getMonsterTitles", data);
-      for(let key in data){
-        global.monster_titles.set(key, data[key]);
-      }
-    });
-  } else {
-    // console.log("Already loaded monster titles");
-  }
+  // if(!global.monster_titles){
+  //   console.log("Loading monster titles");
+  //   await DataService.getMonsterTitles().then((data): any => {
+  //     console.log("global.monster_titles", data);
+  //     global.monster_titles = new Map<string, string>(Object.entries(data))
+  //   });
+  // }
 
-  if(global.book_titles.size === 0){
-    // console.log("Loading book titles");
+  if(!global.book_titles){
     await DataService.getBookTitles().then((data): any => {
-      // for loop iterating over item in data
-      // console.log(data);
-      for (let key in data) {
-        // console.log(data[key]);
-        globalThis.book_titles.set(key, data[key]);
-      }
-
-      // console.log(data);
+      global.book_titles = new Map<string, string>(Object.entries(data))
     });
   }
   
@@ -69,14 +59,14 @@ async function preLaunchOperation(){
       // console.log(data);
       global.monster_keys = data["monster_keys"];
     });
-    // console.log("global.monster_keys: ", global.monster_keys);
+    console.log("global.monster_keys: ", global.monster_keys);
   }
 
   if(global.settings === undefined){
     global.settings = new Array<SettingType>();
     await DataService.getSettings().then((data): any => {
       global.settings = data;
-      console.log("DataService getSettings,",data )
+      console.log("global.settings",data )
     });
   }
 
@@ -85,13 +75,14 @@ async function preLaunchOperation(){
     for(let i = 0; i < global.settings.length; i++){
       global.setting_titles.push(global.settings[i].setting_name);
     }
+    console.log("global.setting_titles", global.setting_titles)
   }
 
   if(global.catalog === undefined){
     global.catalog = new Array<Object>();
     await DataService.getCatalog().then((data): any => {
       global.catalog = data;
-      console.log("DataSErvice getCatalog,",data )
+      console.log("global.catalog",data )
     });
   }
 
@@ -120,7 +111,6 @@ async function preLaunchOperation(){
   const hp_url = "/";
 
   console.log("preLaunchOperation complete");
-  console.log("prelaunch global.monster_titles.size: " + global.monster_titles.size);
   console.log("public_url", hp_url);
   root.render(
     // <React.StrictMode>

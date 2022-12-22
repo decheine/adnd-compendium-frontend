@@ -31,6 +31,14 @@ function HashMonsterData(data: string){
 
 // function MonsterPage({monster_key, monster_data, getMonsterData}: IMonsterPage) {
 function SlimMonsterPage({data}: any) {
+    const [titles, setTitles] = useState(new Map<string, string>())
+    
+    useEffect(() => {
+        global.data_provider.fetchMonsterTitles().then((data): any => {
+            setTitles(global.data_provider.getLocalTitles())
+        })
+    }, [])
+
     if(!data || !data[0]){
         return (
             <div role='loading' key='loading'>
@@ -44,10 +52,8 @@ function SlimMonsterPage({data}: any) {
 
     let previous_monster_key = "";
     let next_monster_key = "";
-    // console.log("global.monster_titles", global.monster_titles)
-    // console.log("global.monster_titles.keys", global.monster_titles.keys() )
     // TODO: This stuff does not need to be in here I don't think.
-    const monster_keys = Array.from(global.monster_titles.keys()) ;  
+    const monster_keys = Array.from(titles.keys()) ;  
     // console.log("monster_keys", monster_keys)
     const index = monster_keys.indexOf(data[0].monster_key.toString());
     if(index > 0 && index < monster_keys.length - 1){

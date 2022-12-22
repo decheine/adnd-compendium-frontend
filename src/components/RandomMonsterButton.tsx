@@ -19,7 +19,6 @@ const RandomMonsterButton = () => {
 
             const random_key = global.monster_keys[getRandomInt(monster_keys.length)];
             setMonsterKey(random_key);
-            // setMonsterTitle(global.monster_titles.get(random_key));
         }
     }
 

@@ -34,14 +34,14 @@ interface BreadCrumbArgs {
 
 // Specify types for Props and State
 type MyProps = {
-    title: string,
-    setting?: string,
-    book?: string,
+    title: string,      // first
+    setting?: string,   // second
+    book?: string,      // third
     monster_key?: string
 }
 
 // 👇️ we set the props to empty object, and set the state to {value: string}
-class BreadCrumb extends React.Component<MyProps> {
+class BreadCrumb extends React.Component<MyProps, {titles: Map<string, string>}> {
 
     // Has a Light Mode and Dark Mode state
 
@@ -49,8 +49,22 @@ class BreadCrumb extends React.Component<MyProps> {
     constructor(props: BreadCrumbArgs) {
         super(props);
         // Don't call this.setState() here!
-        this.state = { counter: 0 };
+        this.state = { 
+            titles: new Map<string, string>(),
+        };
         // this.handleClick = this.handleClick.bind(this);
+        // fetch monster titles
+
+
+    }
+
+    componentDidMount(): void {
+        global.data_provider.fetchMonsterTitles().then((data): any =>{
+            console.log("breadcrumb titles", data)
+            this.setState({
+                titles: new Map<string, string>(Object.entries(data))
+            })
+        });
     }
     
     // will render the breadcrumb depending on the page
@@ -117,8 +131,8 @@ class BreadCrumb extends React.Component<MyProps> {
         else if (this.props.title === "appendix") {
             // this.props.book ? console.log("Titles", Titles[this.props.setting])
             var setting_text = ""
-            setting_text = global.monster_titles.get(this.props.setting!)!
-            // console.log("Appendix setting: ", this.props.book, setting_text)
+            setting_text = this.state.titles.get(this.props.setting!)!
+            console.log("Appendix setting: ", this.props.book, setting_text)
             return (
                 <>
                 <div className="bc-frame">
@@ -142,7 +156,7 @@ class BreadCrumb extends React.Component<MyProps> {
             )
         } 
         else {
-            setting_text = global.monster_titles.get(this.props.setting!)!
+            setting_text = this.state.titles.get(this.props.setting!)!
             return (
                 <>
                 <div className="bc-frame">

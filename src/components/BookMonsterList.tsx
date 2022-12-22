@@ -37,12 +37,7 @@ function BookMonsterList({data}: any) {
                        })
                     .map((monster_key: string) => 
                         <MonsterLink monster_key={monster_key} monster_title={global.book_titles.get(monster_key)} />
-                        // <li>{global.monster_titles.get(monster_key)}</li>
-                    
                     )
-
-
-                
             }
             {/* <div className="box">
                 <div>One</div>

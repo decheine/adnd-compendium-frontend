@@ -7,6 +7,7 @@ import Layout from '../../Layout';
 // import AppendixPage.css
 import './AppendixPage.css';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 type MonsterLinksProps = {
     monster_keys: Map<string, string>,
@@ -16,6 +17,7 @@ const MonsterLinks = (props: MonsterLinksProps) => {
 
     // let arr = Array.from(props.monster_keys.keys())
     // console.log(arr)
+    console.log(props.monster_keys)
     const monster_keys = Array.from(props.monster_keys.keys()).sort((a, b) => a.localeCompare(b))
     const monster_links = monster_keys.map(monster_key => {
         return (
@@ -48,6 +50,16 @@ export function Appendix() {
     // Set up the page variables
     // const itemCount = KEYS_TITLES.length;
     document.title = "Appendix - Complete Compendium"
+    const [titles, setTitles] = useState(new Map<string, string>())
+    
+    useEffect(() => {
+        global.data_provider.fetchMonsterTitles().then((data): any => {
+            setTitles(global.data_provider.getLocalTitles())
+        })
+    }, [])
+
+    
+
     return (
         // upper page with category links
         <>
@@ -58,7 +70,14 @@ export function Appendix() {
         {/* <CategoriesList/> */}
         <div className="AppendixDescription">Browse monster source books by setting or browse all at once.</div>
 
-        <MonsterLinks monster_keys={global.monster_titles}/>
+        {
+            titles && titles.size > 0
+            ? <MonsterLinks monster_keys={global.data_provider.getLocalTitles()}/>
+            : <div role='loading' key='loading'>
+            Loading...
+            </div>
+        }
+        
 
 
         </div>
