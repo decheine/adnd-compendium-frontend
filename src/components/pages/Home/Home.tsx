@@ -10,7 +10,7 @@ import "./Home.css";
 
 
 function Home() {
-  document.title = "AD&D Complete Compendium"
+  document.title = "AD&D 2e Complete Monster Compendium - Full Monstrous Manual"
 
   return (
     <>
