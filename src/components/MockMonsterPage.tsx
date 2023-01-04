@@ -247,9 +247,7 @@ function MockSlimMonsterPage({data}: any) {
             
             <hr className ="hr1"/>
             <hr className ="hr2"/>
-
-             
-
+            
             <div className="monster-img-frame">
             <img    src={"/appendix/img/" + data[0].monster_key + ".gif"} 
                     className = "monster-image"

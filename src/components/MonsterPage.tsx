@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import { Interweave } from 'interweave';
 
 import "./MonsterPage.css"
+import "./SettingColors.css"
+import COLORS from './SettingColors'
 import { Link, useParams } from 'react-router-dom';
 import Layout from './Layout';
 import RandomMonsterButton from './RandomMonsterButton';
@@ -113,6 +115,19 @@ function SlimMonsterPage({data}: any) {
     typeof(data[0].monster_data.fullBody)
     )
 
+    // Handle setting and accent color.
+    const setting_name = data[0].monster_data.setting;
+    const setting_acr = cat_acronyms[setting_name]
+    var hrClass = "hr2"
+    var titleStyle = {}
+    if(setting_acr){
+        hrClass = "hr2-" + setting_acr
+        const colorVar = "--color-" + setting_acr
+        titleStyle = {color: COLORS.get(setting_acr)}
+    }
+
+    // Title style
+
     const fullBody = data[0].monster_data.fullBody;
     const fullBodyHashed = HashMonsterData(fullBody);
     
@@ -136,14 +151,14 @@ function SlimMonsterPage({data}: any) {
             </div>
             {/* TITLE */}
             <div className="top-header">
-                <h1>{data[0].monster_data.title}</h1>
+                <h1 style={titleStyle}>{data[0].monster_data.title}</h1>
                 <Link to={"/catalog/" + cat_acronyms[data[0].monster_data.setting]} className="sourcebook-link">
                     <img className="setting-image" src={`/img_settings/${cat_acronyms[data[0].monster_data.setting]}.gif`}  alt={data[0].monster_data.setting + "Campaign Setting Logo"} title={data[0].monster_data.setting}/>
                 </Link>
             </div>
             
+            <hr className ={hrClass}/>
             <hr className ="hr1"/>
-            <hr className ="hr2"/>
 
             <div className="monster-img-frame">
             {monster_image}
